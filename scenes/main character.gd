@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -40,6 +41,6 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider and collider.is_in_group("enemies"):
-			game_manager.lose_hp()
+			game_manager.char_lose_hp()
 			print("Player collided with an enemy!")
 			# Example: Implement knockback, health reduction, or other effects here
