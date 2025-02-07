@@ -13,8 +13,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if velocity.y >= 0:
 			velocity.y += (gravity * 1.2) * delta
+			char_sprite_2d.play("j_down")
 		else:
 			velocity.y += gravity * delta
+			char_sprite_2d.play("j_up")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -29,9 +31,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x == 0:
+		char_sprite_2d.play("idle")
 		pass # here, we don't want to re-flip the sprite
 	else:
 		var isLeft = velocity.x < 0
 		char_sprite_2d.flip_h = isLeft
+		char_sprite_2d.play("run")
 
 	move_and_slide()
