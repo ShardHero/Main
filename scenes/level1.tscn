@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=38 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
@@ -6,62 +7,44 @@
 [ext_resource type="Texture2D" uid="uid://b5pghtfc6no1i" path="res://assets/art/shardhero_main_char_jdown.png" id="4_xoyvt"]
 [ext_resource type="Texture2D" uid="uid://cytu5huns6sin" path="res://assets/art/shardhero_main_char_jup.png" id="5_0052f"]
 [ext_resource type="Texture2D" uid="uid://cydc46hbo5dmt" path="res://assets/art/shardhero_main_char_run.png" id="6_vy60c"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://cfu6qp58epi4y"]
+
+[ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
+[ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
+[ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
+>>>>>>> testing
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgx8e"]
 texture = ExtResource("1_unyct")
 2:3/0 = 0
-2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:3/0/physics_layer_0/angular_velocity = 0.0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
-3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:3/0/physics_layer_0/angular_velocity = 0.0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
-4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:3/0/physics_layer_0/angular_velocity = 0.0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
-5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:3/0/physics_layer_0/angular_velocity = 0.0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
-6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:3/0/physics_layer_0/angular_velocity = 0.0
 6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
-2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:4/0/physics_layer_0/angular_velocity = 0.0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
-3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:4/0/physics_layer_0/angular_velocity = 0.0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
-4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:4/0/physics_layer_0/angular_velocity = 0.0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
-5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:4/0/physics_layer_0/angular_velocity = 0.0
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:5/0 = 0
-2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:5/0/physics_layer_0/angular_velocity = 0.0
 2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:5/0 = 0
-3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:5/0/physics_layer_0/angular_velocity = 0.0
 3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:5/0 = 0
-4:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:5/0/physics_layer_0/angular_velocity = 0.0
 4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:5/0 = 0
-5:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:5/0/physics_layer_0/angular_velocity = 0.0
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_h5n81"]
@@ -69,6 +52,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_nax6r")
 sources/0 = SubResource("TileSetAtlasSource_sgx8e")
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhfbt"]
 atlas = ExtResource("3_87m3t")
 region = Rect2(0, 0, 32, 32)
@@ -277,6 +261,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntxl"]
 size = Vector2(26, 29)
 
+=======
+>>>>>>> testing
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -286,9 +272,11 @@ tile_set = SubResource("TileSet_h5n81")
 format = 2
 layer_0/tile_data = PackedInt32Array(720898, 262144, 3, 786435, 196608, 3, 720900, 131072, 4, 655364, 131072, 4, 589828, 131072, 3, 786436, 196608, 4, 786434, 196608, 4, 851972, 196608, 4, 851971, 196608, 4, 851970, 196608, 4, 720897, 196608, 3, 720896, 196608, 4, 655360, 262144, 3, 851968, 196608, 4, 786433, 196608, 4, 851969, 196608, 4, 786432, 196608, 4, 589829, 262144, 3, 655365, 262144, 4, 720901, 262144, 4, 786437, 196608, 4, 786438, 196608, 3, 786439, 196608, 3, 786440, 196608, 3, 786441, 196608, 3, 786442, 196608, 3, 851973, 196608, 4, 851974, 196608, 4, 851975, 196608, 4, 851976, 196608, 4, 851977, 196608, 4, 851978, 196608, 4, 786443, 196608, 3, 786449, 196608, 3, 786450, 196608, 3, 786451, 196608, 3, 786452, 196608, 3, 786453, 196608, 3, 786454, 196608, 3, 786455, 196608, 3, 851979, 196608, 4, 851980, 196608, 4, 851981, 196608, 4, 851982, 196608, 4, 851983, 196608, 4, 851984, 196608, 4, 851985, 196608, 4, 851986, 196608, 4, 851987, 196608, 4, 851988, 196608, 4, 851989, 196608, 4, 851990, 196608, 4, 851991, 196608, 4, 720908, 131072, 3, 720909, 196608, 3, 720910, 196608, 3, 720911, 196608, 3, 720912, 262144, 3, 786444, 196608, 4, 786445, 196608, 4, 786446, 196608, 4, 786447, 196608, 4, 786448, 196608, 4, 917503, 196608, 4, 851967, 196608, 4, 786431, 196608, 4, 720895, 196608, 4, 655359, 262144, 4, 589823, 262144, 4, 524287, 262144, 4, 458751, 262144, 4, 393215, 262144, 4, 327679, 262144, 4, 262143, 262144, 4, 196607, 262144, 4, 131071, 262144, 4, 65535, 262144, 4)
 
-[node name="main character" type="CharacterBody2D" parent="."]
-script = ExtResource("2_pjt5x")
+[node name="main character" parent="." instance=ExtResource("2_ff2mj")]
+unique_name_in_owner = true
+position = Vector2(2, 1)
 
+<<<<<<< HEAD
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="main character"]
 texture_filter = 1
 position = Vector2(167, 547)
@@ -302,6 +290,42 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="main character"]
 position = Vector2(167, 561.5)
 shape = SubResource("RectangleShape2D_gntxl")
+=======
+[node name="enemy" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
+position = Vector2(441, 553)
 
-[node name="Camera2D" type="Camera2D" parent="main character"]
-position = Vector2(167, 551)
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_3cxwl")
+>>>>>>> testing
+
+[node name="DamageCooldownTimer" type="Timer" parent="GameManager"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 118.0
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326347
+anchor_top = 0.382653
+anchor_right = 0.673653
+anchor_bottom = 0.617347
+offset_left = 9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health: 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
