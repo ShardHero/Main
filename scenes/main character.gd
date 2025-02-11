@@ -43,4 +43,3 @@ func _physics_process(delta):
 		if collider and collider.is_in_group("enemies"):
 			game_manager.char_lose_hp()
 			print("Player collided with an enemy!")
-			# Example: Implement knockback, health reduction, or other effects here

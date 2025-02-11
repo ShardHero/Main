@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=9 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
+[ext_resource type="PackedScene" uid="uid://b8nkat7vw5jot" path="res://scenes/projectile.tscn" id="4_d1aj6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -53,9 +54,14 @@ layer_0/tile_data = PackedInt32Array(720898, 262144, 3, 786435, 196608, 3, 72090
 [node name="main character" parent="." instance=ExtResource("2_ff2mj")]
 unique_name_in_owner = true
 position = Vector2(2, 1)
+collision_mask = 2
 
 [node name="enemy" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
-position = Vector2(441, 553)
+position = Vector2(457, 554)
+
+[node name="Projectile" parent="." groups=["enemies"] instance=ExtResource("4_d1aj6")]
+position = Vector2(800, 508)
+collision_layer = 2
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8nkat7vw5jot"]
+
+[ext_resource type="Texture2D" uid="uid://ds0pwoe8tdfda" path="res://assets/art/spike.png" id="1_b5rd6"]
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="2_dk2yi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbvmg"]
+size = Vector2(34, 31)
+
+[node name="Projectile" type="CharacterBody2D"]
+position = Vector2(735, 363)
+script = ExtResource("2_dk2yi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, -0.999992)
+rotation = 1.5708
+scale = Vector2(4.44609, 3.92171)
+texture = ExtResource("1_b5rd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_tbvmg")

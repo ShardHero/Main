@@ -6,9 +6,6 @@
 script/source = "extends CharacterBody2D
 @onready var game_manager = %GameManager
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == \"CharacterBody2D\"):
 		game_manager.lose_hp()
