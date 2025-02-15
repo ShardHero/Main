@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb5dc8575xfya"]
+
+[ext_resource type="Texture2D" uid="uid://drrskbachwfdn" path="res://clouds1.png" id="1_40o0k"]
+[ext_resource type="Texture2D" uid="uid://6tuvt7g5xd42" path="res://mountains1.png" id="2_53f7k"]
+[ext_resource type="Texture2D" uid="uid://hpuqms6u14i1" path="res://trash_buildigs112.png" id="3_t8s1s"]
+[ext_resource type="AudioStream" uid="uid://vq46ewk71k5j" path="res://introsound.wav" id="4_u4w8g"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/clouds"]
+position = Vector2(160, 557)
+texture = ExtResource("1_40o0k")
+
+[node name="mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mountains"]
+position = Vector2(159, 557)
+texture = ExtResource("2_53f7k")
+
+[node name="buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/buildings"]
+position = Vector2(161, 557)
+texture = ExtResource("3_t8s1s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u4w8g")
