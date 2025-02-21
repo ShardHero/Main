@@ -1,7 +1,7 @@
-## 'TITLE SCREEN' BRANCH
+## 'LEVEL DESIGN' BRANCH
 
 #### Codeowner(s): Griffin Coyle
 
 ### Purpose:
 
-A testing branch for implementing the title screen
+A testing branch for creating new level design
