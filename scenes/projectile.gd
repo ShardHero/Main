@@ -4,6 +4,9 @@ extends Node2D
 @export var move_direction: Vector2 = Vector2(-1, 0)  # Default direction
 @export var move_distance: float = 240  # Distance before reset
 
+@onready var main_char = %"main character"
+@onready var invuln_timer = $InvulnerabilityTimer  # Reference to the timer
+
 var start_position: Vector2
 var traveled_distance: float = 0
 

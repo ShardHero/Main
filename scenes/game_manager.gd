@@ -12,9 +12,11 @@ func char_lose_hp():
 		hp_label.text = "Health: " + str(hp)
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer
+		main_char.set_collision_mask_value(2, false)
 		if hp <= 0:
 			main_char.queue_free()
 		
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
+	main_char.set_collision_mask_value(2, true)

@@ -26,6 +26,7 @@ animations = [{
 size = Vector2(39, 47.5)
 
 [node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
 script = SubResource("GDScript_lt5bw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
