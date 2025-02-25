@@ -1,7 +1,3 @@
-## 'TITLE SCREEN' BRANCH
+#### Codeowner(s): Tashi Sherpa
 
-#### Codeowner(s): Griffin Coyle
 
-### Purpose:
-
-A testing branch for implementing the title screen

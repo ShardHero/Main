@@ -1,7 +1,7 @@
 extends Node
 @onready var hp_label = %HPLabel
 @onready var damage_timer = $DamageCooldownTimer  # Reference to the timer
-@onready var main_char = %"main character"
+@onready var main_char = %"main_character"
 
 var hp = 100
 var can_take_damage = true  # Prevent multiple damage hits
