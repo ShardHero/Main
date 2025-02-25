@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dygv2txj36y50"]
+
+[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_en0v4"]
+[ext_resource type="Texture2D" uid="uid://brkd2qiag6wcn" path="res://concept_title_draft.png" id="1_hh0x7"]
+
+[node name="TitleScreen" type="Node"]
+script = ExtResource("1_en0v4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hh0x7")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -190.0
+offset_right = 150.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
