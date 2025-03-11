@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=16 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/checkpoint.gd" id="6_ssrfi"]
 [ext_resource type="Texture2D" uid="uid://bxvvtdfwrhjaq" path="res://assets/art/red_checkpoint_placeholder.png" id="7_lmtvy"]
 [ext_resource type="PackedScene" path="res://scenes/global.tscn" id="7_ytou0"]
+[ext_resource type="PackedScene" uid="uid://c0dv5g3cetdju" path="res://scenes/coin.tscn" id="9_ag2iv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -136,6 +137,10 @@ position = Vector2(1895, 505)
 shape = SubResource("RectangleShape2D_t6351")
 
 [node name="Global" parent="." instance=ExtResource("7_ytou0")]
+
+[node name="Collectables group" type="Node" parent="."]
+
+[node name="Coin" parent="Collectables group" instance=ExtResource("9_ag2iv")]
 
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Death_Area" to="Level1Death_Area" method="_on_body_entered"]

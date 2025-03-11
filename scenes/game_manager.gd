@@ -5,6 +5,7 @@ extends Node
 
 var hp = 100
 var can_take_damage = true  # Prevent multiple damage hits
+var coins = 0
 
 func char_lose_hp():
 	if can_take_damage:
