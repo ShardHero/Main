@@ -1,20 +1,13 @@
-<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://cfu6qp58epi4y"]
-=======
-[gd_scene load_steps=8 format=3 uid="uid://cfu6qp58epi4y"]
->>>>>>> testing
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="Script" path="res://scenes/checkpoint.gd" id="6_ssrfi"]
 [ext_resource type="Texture2D" uid="uid://bxvvtdfwrhjaq" path="res://assets/art/red_checkpoint_placeholder.png" id="7_lmtvy"]
-[ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-=======
->>>>>>> testing
+[ext_resource type="PackedScene" path="res://scenes/global.tscn" id="7_ytou0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -52,7 +45,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_nax6r")
 sources/0 = SubResource("TileSetAtlasSource_sgx8e")
 
-<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbx6y"]
 size = Vector2(144, 37)
 
@@ -63,9 +55,6 @@ size = Vector2(1090, 20)
 size = Vector2(20, 46)
 
 [node name="Level1Base" type="Node2D"]
-=======
-[node name="Level1" type="Node2D"]
->>>>>>> testing
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -114,7 +103,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-<<<<<<< HEAD
 [node name="Level1Floor_Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Floor_Area"]
@@ -152,6 +140,3 @@ shape = SubResource("RectangleShape2D_t6351")
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Death_Area" to="Level1Death_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
-=======
-[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
->>>>>>> testing
