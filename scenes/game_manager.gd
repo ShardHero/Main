@@ -19,3 +19,7 @@ func char_lose_hp():
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
+
+func add_coin():
+	coins += 1
+	
