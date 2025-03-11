@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=14 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="Texture2D" uid="uid://8jeyfbaqaaga" path="res://assets/art/CopperTileset.png" id="2_7qamd"]
 [ext_resource type="Texture2D" uid="uid://cfvsksafbly8o" path="res://assets/art/concept_char_sprite.png" id="2_ip1dh"]
 [ext_resource type="Script" path="res://scenes/main character.gd" id="2_pjt5x"]
+[ext_resource type="Texture2D" uid="uid://ujjpdhnn5hln" path="res://assets/art/ShardHero_Checkpoint.png" id="5_0d0r4"]
+[ext_resource type="Texture2D" uid="uid://40btm41mp2u" path="res://assets/art/ShardHero_EndMarker.png" id="6_fc6be"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -150,3 +152,21 @@ position = Vector2(-2, 4)
 shape = SubResource("RectangleShape2D_gntxl")
 
 [node name="Camera2D" type="Camera2D" parent="main character"]
+
+[node name="CheckpointPlaceholder1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3288, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0d0r4")
+
+[node name="CheckpointPlaceholder2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7176, -80)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0d0r4")
+
+[node name="GoalPlaceholder" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(11496, -752)
+scale = Vector2(2, 2)
+texture = ExtResource("6_fc6be")
