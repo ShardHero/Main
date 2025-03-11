@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=10 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="PackedScene" uid="uid://b8nkat7vw5jot" path="res://scenes/projectile.tscn" id="4_d1aj6"]
+[ext_resource type="PackedScene" uid="uid://clqiqw30tis2o" path="res://projectile_shooter.tscn" id="5_f54wi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -59,7 +60,10 @@ position = Vector2(2, 1)
 position = Vector2(457, 554)
 
 [node name="Projectile" parent="." groups=["enemies"] instance=ExtResource("4_d1aj6")]
-position = Vector2(800, 508)
+position = Vector2(825, 484)
+
+[node name="Projectile_Shooter" parent="." instance=ExtResource("5_f54wi")]
+position = Vector2(795, 498)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
