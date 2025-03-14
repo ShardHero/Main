@@ -60,6 +60,7 @@ position = Vector2(-23.6487, 12.2094)
 rotation = 1.5708
 scale = Vector2(2.2435, 2.17864)
 sprite_frames = SubResource("SpriteFrames_btctd")
+animation = &"exploding"
 autoplay = "default"
 
 [node name="InvulnerabilityTimer" type="Timer" parent="."]

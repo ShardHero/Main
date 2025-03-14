@@ -54,12 +54,16 @@ radius = 17.0
 position = Vector2(735, 363)
 collision_layer = 2
 script = ExtResource("2_dk2yi")
+speed = null
+move_direction = null
+move_distance = null
 
 [node name="Animated_cannonball" type="AnimatedSprite2D" parent="."]
 position = Vector2(-23.6487, 12.2094)
 rotation = 1.5708
 scale = Vector2(2.2435, 2.17864)
 sprite_frames = SubResource("SpriteFrames_btctd")
+animation = &"exploding"
 autoplay = "default"
 
 [node name="InvulnerabilityTimer" type="Timer" parent="."]

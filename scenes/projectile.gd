@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var move_direction: Vector2 = Vector2(-1, 0)  # Default direction
 @export var move_distance: float = 240  # Distance before reset
 
+@onready var sprite_2D = $Animated_cannonball
+
 var start_position: Vector2  # Store initial spawn position
 var traveled_distance: float = 0
 var respawn_timer: Timer  # Timer for respawning
@@ -26,6 +28,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(movement)
 
 	if (collision and collision.get_collider().name == 'main character') or traveled_distance == move_distance:
+		#sprite_2D.animation = "exploding"
+		#await sprite_2D.animation_finished
 		despawn_projectile()  # Despawn on collision or max distance
 
 	traveled_distance += movement.length()
@@ -40,6 +44,7 @@ func despawn_projectile():
 	
 
 func respawn_projectile():
+	#sprite_2D.animation = "default"
 	position = start_position  # Move back to spawn location
 	set_deferred("collision_layer", 2)  # Re-enable collisions
 	set_deferred("collision_mask", 1)
