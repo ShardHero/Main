@@ -9,12 +9,15 @@ extends Node
 
 func _process(delta):
 	#print("Player x Vel: ",player.velocity.x)
-	print("Player x Pos: ", player.position.x)
-	print("Camera x Pos: ", camera.position.x)
-	#print("Player y Pos: ", player.position.y)
-	#print("Camera y Pos: ", camera.position.y)
+	#print("Player x Pos: ", player.position.x)
+	#print("Camera x Pos: ", camera.position.x)
+	print("Player y Pos: ", player.position.y)
+	print("Camera y Pos: ", camera.position.y)
 	
 	if player.position.y < 2 and player.position.y > -1:
+		camera.position.y = 420
+		
+	if camera.position.y > 420:
 		camera.position.y = 420
 
 	if player.is_on_floor():
@@ -34,10 +37,10 @@ func _process(delta):
 				camera.position.y = 265
 	
 	if Input.is_action_pressed("ui_right"):
-		if player.position.x + 300 < 4600 && player.position.x > 40:
-			if player.velocity[0] != 0:
+		if player.velocity[0] != 0:
+			if player.position.x + 300 < 4600 && player.position.x > 40:
 				camera.position.x = player.get_position()[0] + 300;
-			if player.position.x > 4900:
+			if player.position.x > 4300:
 				camera.position.x = 4600
 			
 	if Input.is_action_pressed("ui_left"):
