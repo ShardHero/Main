@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8jeyfbaqaaga"
-path="res://.godot/imported/CopperTileset.png-e5d716468566062fc6b3fed3bc1fd505.ctex"
+uid="uid://cytu5huns6sin"
+path="res://.godot/imported/shardhero_main_char_jup.png-180bd23c32ded4dd2a31876e970cd90b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/CopperTileset.png"
-dest_files=["res://.godot/imported/CopperTileset.png-e5d716468566062fc6b3fed3bc1fd505.ctex"]
+source_file="res://assets/art/shardhero_main_char_jup.png"
+dest_files=["res://.godot/imported/shardhero_main_char_jup.png-180bd23c32ded4dd2a31876e970cd90b.ctex"]
 
 [params]
 
