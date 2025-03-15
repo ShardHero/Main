@@ -18,12 +18,12 @@ func _process(delta):
 		camera.position.y = 420
 		
 	if camera.position.y > 420:
-		camera.position.y = 420
+		camera.position.y = 419
 
 	if player.is_on_floor():
 		y_pos = player.position.y;
 		if not camera.position.y == 420:
-			if not player.position.y + 580 > 420:
+			if not player.position.y + 540 > 420:
 				camera.position.y = player.position.y + 540;
 				if camera.position.y < 265:
 					camera.position.y = 265
