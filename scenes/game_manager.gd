@@ -7,48 +7,54 @@ extends Node
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
 
+@onready var camera_floor = 420
+@onready var camera_ceiling = 265
+@onready var camera_x_min = 340
+@onready var camera_x_max = 4600
+
 func _process(delta):
-	#print("Player x Vel: ",player.velocity.x)
+	
+	##TEST TEST
 	#print("Player x Pos: ", player.position.x)
 	#print("Camera x Pos: ", camera.position.x)
-	print("Player y Pos: ", player.position.y)
-	print("Camera y Pos: ", camera.position.y)
+	#print("Player y Pos: ", player.position.y)
+	#print("Camera y Pos: ", camera.position.y)
+	##TEST TEST
 	
 	if player.position.y < 2 and player.position.y > -1:
-		camera.position.y = 420
+		camera.position.y = camera_floor
 		
-	if camera.position.y > 420:
-		camera.position.y = 419
+	if camera.position.y > camera_floor:
+		camera.position.y = camera_floor - 1
 
 	if player.is_on_floor():
 		y_pos = player.position.y;
-		if not camera.position.y == 420:
-			if not player.position.y + 540 > 420:
+		if not camera.position.y == camera_floor:
+			if not player.position.y + 540 > camera_floor:
 				camera.position.y = player.position.y + 540;
-				if camera.position.y < 265:
-					camera.position.y = 265
+				if camera.position.y <= camera_ceiling:
+					camera.position.y = camera_ceiling
 		
 		#CAMERA CEILING 265??
 	if not player.is_on_floor():
 		if player.position.y > y_pos+50 or player.position.y < y_pos-50:
-			
 			camera.position.y += player.velocity.y/100;
-			if camera.position.y <= 265: 
-				camera.position.y = 265
+			if camera.position.y <= camera_ceiling: 
+				camera.position.y = camera_ceiling
 	
 	if Input.is_action_pressed("ui_right"):
 		if player.velocity[0] != 0:
-			if player.position.x + 300 < 4600 && player.position.x > 40:
-				camera.position.x = player.get_position()[0] + 300;
-			if player.position.x > 4300:
-				camera.position.x = 4600
+			if player.position.x + 300 < camera_x_max && player.position.x + 300 > camera_x_min:
+				camera.position.x = player.position.x + 300;
+			if player.position.x + 300 >= camera_x_max:
+				camera.position.x = camera_x_max
 			
 	if Input.is_action_pressed("ui_left"):
 		if player.velocity[0] != 0:
-			if player.position.x < 4600 && player.position.x > 340:
-				camera.position.x = player.get_position()[0] + 50;
-			if player.position.x < 390:
-				camera.position.x = 340
+			if player.position.x + 50 < camera_x_max && player.position.x + 50 > camera_x_min:
+				camera.position.x = player.position.x + 50;
+			if player.position.x + 50 <= camera_x_min:
+				camera.position.x = camera_x_min
 
 
 var hp = 100
