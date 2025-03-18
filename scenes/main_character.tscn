@@ -37,3 +37,7 @@ shape = SubResource("RectangleShape2D_gntxl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(167, 551)
+
+[node name="HitCooldownTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="HitCooldownTimer" to="." method="_on_hit_cooldown_timer_timeout"]

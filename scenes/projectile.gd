@@ -28,23 +28,20 @@ func _physics_process(delta):
 	var collision = move_and_collide(movement)
 
 	if (collision and collision.get_collider().name == 'main character') or traveled_distance == move_distance:
-		#sprite_2D.animation = "exploding"
-		#await sprite_2D.animation_finished
 		despawn_projectile()  # Despawn on collision or max distance
 
 	traveled_distance += movement.length()
 
 func despawn_projectile():
 	hide()  # Make the projectile invisible
-	await get_tree().create_timer((move_distance - traveled_distance) / speed).timeout
 	traveled_distance = 0  # Reset distance counter
 	set_deferred("collision_layer", 0)  # Disable collisions initially
 	set_deferred("collision_mask", 0)
+	await get_tree().create_timer((move_distance - traveled_distance) / speed).timeout
 	respawn_timer.start()  # Start the respawn timer
 	
 
 func respawn_projectile():
-	#sprite_2D.animation = "default"
 	position = start_position  # Move back to spawn location
 	set_deferred("collision_layer", 2)  # Re-enable collisions
 	set_deferred("collision_mask", 1)
