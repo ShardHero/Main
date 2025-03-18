@@ -91,7 +91,7 @@ offset_top = 20.0
 offset_right = 190.0
 offset_bottom = 118.0
 
-[node name="HPLabel" type="Label" parent="CanvasLayer/Panel"]
+[node name="VarLabel" type="Label" parent="CanvasLayer/Panel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
