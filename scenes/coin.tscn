@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0dv5g3cetdju"]
+[gd_scene load_steps=5 format=3 uid="uid://vdj4i8x4pxm1"]
 
-[ext_resource type="Texture2D" uid="uid://de2e7byj0u0hj" path="res://assets/art/coin_sprite.png" id="1_fmqwx"]
+[ext_resource type="Texture2D" uid="uid://tqakd817qenp" path="res://assets/art/coin_sprite.png" id="1_fmqwx"]
 [ext_resource type="Script" path="res://scenes/coin.gd" id="1_vpade"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1n73"]
