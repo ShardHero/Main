@@ -31,7 +31,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fire",
-"speed": 3.0
+"speed": 2.22
 }, {
 "frames": [{
 "duration": 1.0,
@@ -54,7 +54,6 @@ sprite_frames = SubResource("SpriteFrames_xj8me")
 animation = &"fire"
 autoplay = "fire"
 frame = 1
-frame_progress = 0.785863
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
