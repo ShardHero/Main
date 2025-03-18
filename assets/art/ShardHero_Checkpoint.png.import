@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tqakd817qenp"
-path="res://.godot/imported/coin_sprite.png-13e5fca18c957a82eb771400647f3037.ctex"
+uid="uid://ujjpdhnn5hln"
+path="res://.godot/imported/ShardHero_Checkpoint.png-2c569a6eb031814616239491498e9114.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/coin_sprite.png"
-dest_files=["res://.godot/imported/coin_sprite.png-13e5fca18c957a82eb771400647f3037.ctex"]
+source_file="res://assets/art/ShardHero_Checkpoint.png"
+dest_files=["res://.godot/imported/ShardHero_Checkpoint.png-2c569a6eb031814616239491498e9114.ctex"]
 
 [params]
 

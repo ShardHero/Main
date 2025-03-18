@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tqakd817qenp"
-path="res://.godot/imported/coin_sprite.png-13e5fca18c957a82eb771400647f3037.ctex"
+uid="uid://40btm41mp2u"
+path="res://.godot/imported/ShardHero_EndMarker.png-f8f4109c3ff2b212cfd4c12b5ca91c96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/coin_sprite.png"
-dest_files=["res://.godot/imported/coin_sprite.png-13e5fca18c957a82eb771400647f3037.ctex"]
+source_file="res://assets/art/ShardHero_EndMarker.png"
+dest_files=["res://.godot/imported/ShardHero_EndMarker.png-f8f4109c3ff2b212cfd4c12b5ca91c96.ctex"]
 
 [params]
 
