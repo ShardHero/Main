@@ -13,7 +13,6 @@ func char_lose_hp():
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
 			main_char.queue_free()
-		
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
