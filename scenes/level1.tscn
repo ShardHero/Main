@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=17 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
@@ -57,10 +57,16 @@ sources/0 = SubResource("TileSetAtlasSource_sgx8e")
 size = Vector2(162, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0hm7"]
-size = Vector2(2359, 58.5)
+size = Vector2(2286.75, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g51ic"]
 size = Vector2(51.5, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clyie"]
+size = Vector2(987, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf5k7"]
+size = Vector2(142.25, 20)
 
 [node name="Level1Base" type="Node2D"]
 
@@ -145,7 +151,7 @@ shape = SubResource("RectangleShape2D_vbx6y")
 script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area"]
-position = Vector2(4375.5, 498.25)
+position = Vector2(4343, 493)
 shape = SubResource("RectangleShape2D_r0hm7")
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_idqrs")]
@@ -163,6 +169,24 @@ position = Vector2(1310, 394)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Side_Area"]
 position = Vector2(6431, -1)
 shape = SubResource("RectangleShape2D_g51ic")
+
+[node name="Level1Death_Area2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area2"]
+position = Vector2(2362.5, 579)
+shape = SubResource("RectangleShape2D_clyie")
+
+[node name="Level1Death_Area3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area3"]
+position = Vector2(5928, 486)
+shape = SubResource("RectangleShape2D_cf5k7")
+
+[node name="Level1Death_Area4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area4"]
+position = Vector2(6216, 487)
+shape = SubResource("RectangleShape2D_cf5k7")
 
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Death_Area" to="Level1Death_Area" method="_on_body_entered"]
