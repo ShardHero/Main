@@ -171,18 +171,21 @@ position = Vector2(6431, -1)
 shape = SubResource("RectangleShape2D_g51ic")
 
 [node name="Level1Death_Area2" type="Area2D" parent="."]
+script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area2"]
 position = Vector2(2362.5, 579)
 shape = SubResource("RectangleShape2D_clyie")
 
 [node name="Level1Death_Area3" type="Area2D" parent="."]
+script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area3"]
 position = Vector2(5928, 486)
 shape = SubResource("RectangleShape2D_cf5k7")
 
 [node name="Level1Death_Area4" type="Area2D" parent="."]
+script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area4"]
 position = Vector2(6216, 487)
