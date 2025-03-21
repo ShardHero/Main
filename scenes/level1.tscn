@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
