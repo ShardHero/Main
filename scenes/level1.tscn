@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=22 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="Script" path="res://scenes/var_label.gd" id="5_q5mm8"]
+[ext_resource type="Texture2D" uid="uid://dmyxajgaifdf4" path="res://icon.svg" id="6_fnqun"]
 [ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
 [ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
@@ -53,6 +54,42 @@ texture = ExtResource("1_unyct")
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_nax6r")
 sources/0 = SubResource("TileSetAtlasSource_sgx8e")
+
+[sub_resource type="Animation" id="Animation_1xst0"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fw70k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcpja"]
+_data = {
+"RESET": SubResource("Animation_fw70k"),
+"fade": SubResource("Animation_1xst0")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbx6y"]
 size = Vector2(162, 37)
@@ -125,6 +162,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_q5mm8")
 metadata/_edit_use_anchors_ = true
+
+[node name="blackbox" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(409, -66)
+scale = Vector2(0.679688, 0.789063)
+texture = ExtResource("6_fnqun")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_kcpja")
+}
+
+[node name="fade" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+position = Vector2(449, 80)
+texture = ExtResource("6_fnqun")
 
 [node name="Level1Floor_Area" type="Area2D" parent="."]
 
