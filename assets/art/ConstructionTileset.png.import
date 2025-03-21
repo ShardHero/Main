@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brkd2qiag6wcn"
-path="res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"
+uid="uid://djjt37h4w8gux"
+path="res://.godot/imported/ConstructionTileset.png-0afb19e4b1da3c734be437ff12e1e856.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://concept_title_draft.png"
-dest_files=["res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"]
+source_file="res://assets/art/ConstructionTileset.png"
+dest_files=["res://.godot/imported/ConstructionTileset.png-0afb19e4b1da3c734be437ff12e1e856.ctex"]
 
 [params]
 
