@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtxmnky7jdx6f"]
+
+[ext_resource type="Texture2D" uid="uid://cfvsksafbly8o" path="res://assets/art/concept_char_sprite.png" id="1_ibn04"]
+[ext_resource type="Script" path="res://enemy_type_2.gd" id="1_kec0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t7on"]
+size = Vector2(18, 21)
+
+[node name="EnemyType2" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_kec0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ibn04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_4t7on")
+
+[node name="Vision" type="RayCast2D" parent="."]
+target_position = Vector2(150, 0)
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+target_position = Vector2(9, 0)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(0, 13)
