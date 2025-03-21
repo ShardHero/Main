@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=19 format=3 uid="uid://cfu6qp58epi4y"]
 
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_10m1u"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="Script" path="res://scenes/var_label.gd" id="5_q5mm8"]
-[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
+[ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
 [ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
 
@@ -70,6 +71,7 @@ size = Vector2(987, 23)
 size = Vector2(142.25, 20)
 
 [node name="Level1Base" type="Node2D"]
+script = ExtResource("1_10m1u")
 
 [node name="MovingCamera" type="Camera2D" parent="."]
 position = Vector2(340, 420)
