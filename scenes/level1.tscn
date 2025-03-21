@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
-[ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -57,13 +57,13 @@ sources/0 = SubResource("TileSetAtlasSource_sgx8e")
 size = Vector2(162, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0hm7"]
-size = Vector2(2286.75, 58.5)
+size = Vector2(2286.75, 49.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g51ic"]
 size = Vector2(51.5, 210)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clyie"]
-size = Vector2(987, 26)
+size = Vector2(987, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf5k7"]
 size = Vector2(142.25, 20)
@@ -151,7 +151,7 @@ shape = SubResource("RectangleShape2D_vbx6y")
 script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area"]
-position = Vector2(4343, 493)
+position = Vector2(4343, 497.625)
 shape = SubResource("RectangleShape2D_r0hm7")
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_idqrs")]
@@ -174,7 +174,7 @@ shape = SubResource("RectangleShape2D_g51ic")
 script = ExtResource("5_8xsqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Death_Area2"]
-position = Vector2(2362.5, 579)
+position = Vector2(2362.5, 580.5)
 shape = SubResource("RectangleShape2D_clyie")
 
 [node name="Level1Death_Area3" type="Area2D" parent="."]
