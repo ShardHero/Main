@@ -3,7 +3,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var camera = get_node("MovingCamera")
-	Global.adjust_camera(405, 350, 390, 6500, camera)
+	#Floor, Ceiling, Xmin, Xmax
+	Global.adjust_camera(405, -134, 390, 6116, camera)
 
 	pass # Replace with function body.
 
