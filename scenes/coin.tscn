@@ -14,8 +14,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tgteq"]
-radius = 31.1448
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgbv5"]
+radius = 15.0
+height = 62.0
 
 [node name="Coin" type="Area2D"]
 position = Vector2(-2, -3)
@@ -29,7 +30,7 @@ sprite_frames = SubResource("SpriteFrames_s1n73")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("CircleShape2D_tgteq")
+position = Vector2(9, 7)
+shape = SubResource("CapsuleShape2D_vgbv5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
