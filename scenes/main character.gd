@@ -47,6 +47,7 @@ func _physics_process(delta):
 		if collider and collider.is_in_group("enemies") and can_take_damage:
 			game_manager.char_lose_hp()
 			set_collision_mask_value(2, false)
+			damage_timer.start()
 			can_take_damage = false
 			print("Player collided with an enemy!")
 

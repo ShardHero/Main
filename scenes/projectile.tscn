@@ -18,7 +18,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -62,10 +62,6 @@ scale = Vector2(2.2435, 2.17864)
 sprite_frames = SubResource("SpriteFrames_btctd")
 autoplay = "default"
 
-[node name="InvulnerabilityTimer" type="Timer" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 12)
 shape = SubResource("CircleShape2D_66k8c")
-
-[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]

@@ -39,5 +39,6 @@ shape = SubResource("RectangleShape2D_gntxl")
 position = Vector2(167, 551)
 
 [node name="HitCooldownTimer" type="Timer" parent="."]
+wait_time = 0.592
 
 [connection signal="timeout" from="HitCooldownTimer" to="." method="_on_hit_cooldown_timer_timeout"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://djl2qjii8v5ts"]
+
+[ext_resource type="Texture2D" uid="uid://ks6d1cxyutfr" path="res://assets/art/Cannon/Cannon Idle/1.png" id="1_reewk"]
+[ext_resource type="Texture2D" uid="uid://2yj2vjd05tl" path="res://assets/art/Cannon/Cannon Fire/1.png" id="2_ffehx"]
+[ext_resource type="Texture2D" uid="uid://w8c2a5hd4krg" path="res://assets/art/Cannon/Cannon Fire/2.png" id="3_bnjud"]
+[ext_resource type="Texture2D" uid="uid://bbbhb5rd8or82" path="res://assets/art/Cannon/Cannon Fire/3.png" id="4_ojxwj"]
+[ext_resource type="Texture2D" uid="uid://jluac57xvoqx" path="res://assets/art/Cannon/Cannon Fire/4.png" id="5_8v2ce"]
+[ext_resource type="Texture2D" uid="uid://3r4ukvcap7fy" path="res://assets/art/Cannon/Cannon Fire/5.png" id="6_kvmt8"]
+[ext_resource type="Texture2D" uid="uid://ycqqvapfpona" path="res://assets/art/Cannon/Cannon Fire/6.png" id="7_tv2q2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21xax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_reewk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8v2ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvmt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tv2q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ffehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bnjud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ojxwj")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4shwd"]
+size = Vector2(78, 60)
+
+[node name="ProjectileShooter" type="CharacterBody2D"]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(2.825, 2.61538)
+sprite_frames = SubResource("SpriteFrames_21xax")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_4shwd")

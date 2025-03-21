@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="PackedScene" uid="uid://b8nkat7vw5jot" path="res://scenes/projectile.tscn" id="4_d1aj6"]
-[ext_resource type="PackedScene" uid="uid://clqiqw30tis2o" path="res://projectile_shooter.tscn" id="5_f54wi"]
+[ext_resource type="PackedScene" uid="uid://djl2qjii8v5ts" path="res://scenes/projectile_shooter.tscn" id="5_5fi1t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -62,8 +62,8 @@ position = Vector2(457, 554)
 [node name="Projectile" parent="." groups=["enemies"] instance=ExtResource("4_d1aj6")]
 position = Vector2(825, 484)
 
-[node name="Projectile_Shooter" parent="." instance=ExtResource("5_f54wi")]
-position = Vector2(795, 498)
+[node name="ProjectileShooter" parent="." instance=ExtResource("5_5fi1t")]
+position = Vector2(792, 494)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
