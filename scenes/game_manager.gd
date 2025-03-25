@@ -8,9 +8,7 @@ extends Node
 @onready var y_pos = player.position.y;
 
 func _process(delta):
-	
-	print(player.position.x, player.position.y)
-	
+		
 	if player.position.y < 2 and player.position.y > -1:
 		camera.position.y = Global.camera_floor
 		
@@ -27,7 +25,7 @@ func _process(delta):
 		
 		#CAMERA CEILING 265??
 	if not player.is_on_floor():
-		if player.position.y > y_pos+50 or player.position.y < y_pos-50:
+		if player.position.y > y_pos+0 or player.position.y < y_pos-0:
 			camera.position.y += player.velocity.y/100;
 			if camera.position.y <= Global.camera_ceiling: 
 				camera.position.y = Global.camera_ceiling

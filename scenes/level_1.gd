@@ -3,8 +3,6 @@ extends Node
 
 @onready var var_label_node = $Canvas/Panel/VarLabel
 
-extends Node2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var camera = get_node("MovingCamera")

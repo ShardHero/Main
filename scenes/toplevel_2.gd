@@ -7,5 +7,5 @@ extends Node2D
 func _ready() -> void:
 	Global.set_var_label(var_label_node)
 	Global.update_label()
-	main_character.position = Vector2(0,0)
+	main_character.position = Vector2(300,0)
 	
