@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://b8nkat7vw5jot"]
 
 [ext_resource type="Texture2D" uid="uid://b8h7fp3ktsk4g" path="res://assets/art/Cannon/Cannon Ball Idle/1.png" id="2_7eb5j"]
@@ -9,6 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://q0564th8qm5i" path="res://assets/art/Cannon/Cannon Ball Explosion/5.png" id="7_2bpo4"]
 [ext_resource type="Texture2D" uid="uid://cd5vtbw8rnind" path="res://assets/art/Cannon/Cannon Ball Explosion/6.png" id="8_omf6b"]
 [ext_resource type="Texture2D" uid="uid://b2s6knsq4xyah" path="res://assets/art/Cannon/Cannon Ball Explosion/7.png" id="9_8g6hr"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://bc4lgrb1kyy1r"]
+
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Idle/1.png" id="2_7eb5j"]
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="2_dk2yi"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/1.png" id="3_2oi1t"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/2.png" id="4_kuv74"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/3.png" id="5_k3ga1"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/4.png" id="6_waunt"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/5.png" id="7_2bpo4"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/6.png" id="8_omf6b"]
+[ext_resource type="Texture2D" path="res://assets/art/Cannon/Cannon Ball Explosion/7.png" id="9_8g6hr"]
+>>>>>>> Stashed changes
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_btctd"]
 animations = [{
@@ -61,6 +75,10 @@ rotation = 1.5708
 scale = Vector2(2.2435, 2.17864)
 sprite_frames = SubResource("SpriteFrames_btctd")
 autoplay = "default"
+<<<<<<< Updated upstream
+=======
+frame_progress = 0.323657
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 12)

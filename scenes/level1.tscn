@@ -1,11 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://cfu6qp58epi4y"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="PackedScene" uid="uid://b8nkat7vw5jot" path="res://scenes/projectile.tscn" id="4_d1aj6"]
 [ext_resource type="PackedScene" uid="uid://djl2qjii8v5ts" path="res://scenes/projectile_shooter.tscn" id="5_5fi1t"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
+[ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
+[ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
+[ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
+[ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
+[ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="5_15gxk"]
+[ext_resource type="Script" path="res://scenes/level_1_up_area.gd" id="5_thao0"]
+[ext_resource type="PackedScene" path="res://scenes/canvas.tscn" id="6_xhcmi"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
+[ext_resource type="PackedScene" path="res://scenes/global.tscn" id="7_ytou0"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
+>>>>>>> Stashed changes
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 

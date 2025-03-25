@@ -1,3 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://nox5k4ffsnr0"]
 
 [node name="Level2" type="Node2D"]
+=======
+[gd_scene format=3 uid="uid://d2khq8t7y8c8u"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+>>>>>>> Stashed changes
