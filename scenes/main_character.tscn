@@ -35,9 +35,6 @@ sprite_frames = SubResource("SpriteFrames_hdbct")
 position = Vector2(167, 555)
 shape = SubResource("RectangleShape2D_gntxl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(167, 551)
-
 [node name="HitCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true

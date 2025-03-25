@@ -14,3 +14,12 @@ config/name="Shard Hero"
 run/main_scene="res://scenes/level1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/global.tscn"
+VarLabel="*res://scenes/var_label.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
