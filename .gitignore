@@ -1,2 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
+
+# .swp / .tmp files
+*.swp
+*.tmp
+
+# godot-specific files
+.import/
+export_presets.cfg
+
