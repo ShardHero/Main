@@ -10,22 +10,40 @@ var camera_x_min = 340
 var camera_x_max = 6000
 var var_label = null
 
+func update_position(new_position):
+	spawn_position = new_position
+
 #Must be fed max and min values AND the camera node in order
 #to set its initial location
 #IMPORTANT: AT camera zoom (1.2)...
 #IMPORTANT: camera location is 384 pixels offset from x min/max
 #IMPORTANT: camera location is 216 pixels offset from y min/max
-func adjust_camera(floor, ceiling, x_min, x_max, camera_node):
+func adjust_camera(floor, ceiling, x_min, x_max, camera_node, player):
+	
+	var face = player.get_node("AnimatedSprite2D")
+		
 	Global.camera_floor = floor
 	Global.camera_ceiling = ceiling
 	Global.camera_x_min = x_min
 	Global.camera_x_max = x_max
 	
-	camera_node.position.x = x_min
-	camera_node.position.y = floor
+	if(not face.flip_h):
+		camera_node.position.x = player.position.x + (300)
+	else:
+		camera_node.position.x = player.position.x - (300)
 	
-func update_position(new_position):
-	spawn_position = new_position
+	
+	if(camera_node.position.x<x_min):
+		camera_node.position.x = x_min
+	if(camera_node.position.x>x_max):
+		camera_node.position.x = x_max
+		
+	camera_node.position.y = player.position.y
+	if(camera_node.position.y<ceiling):
+		camera_node.position.y = ceiling		
+	if(camera_node.position.y>floor):
+		camera_node.position.y = floor
+	
 
 
 func set_var_label(label: Label):

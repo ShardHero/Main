@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="5_15gxk"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area.gd" id="5_thao0"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_xhcmi"]
-[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
+[ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
 [ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
 

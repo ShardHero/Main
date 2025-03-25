@@ -8,6 +8,8 @@ extends Node
 @onready var y_pos = player.position.y;
 
 func _process(delta):
+	#print("Camera Position ",camera.position.x)
+	#print("Player Position ",player.position.x)
 		
 	if player.position.y < 2 and player.position.y > -1:
 		camera.position.y = Global.camera_floor
