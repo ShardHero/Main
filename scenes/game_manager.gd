@@ -1,14 +1,14 @@
 extends Node
 @onready var damage_timer = $DamageCooldownTimer  # Reference to the timer
 @onready var main_char = %"main_character"
-@onready var var_label = %VarLabel
+# VarLabel is autoloaded and global.
 
 @onready var player = get_node("../main_character")
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
 
 func _process(delta):
-	
+		
 	if player.position.y < 2 and player.position.y > -1:
 		camera.position.y = Global.camera_floor
 		
@@ -25,7 +25,7 @@ func _process(delta):
 		
 		#CAMERA CEILING 265??
 	if not player.is_on_floor():
-		if player.position.y > y_pos+50 or player.position.y < y_pos-50:
+		if player.position.y > y_pos+0 or player.position.y < y_pos-0:
 			camera.position.y += player.velocity.y/100;
 			if camera.position.y <= Global.camera_ceiling: 
 				camera.position.y = Global.camera_ceiling
@@ -50,7 +50,7 @@ var can_take_damage = true  # Prevent multiple damage hits
 func char_lose_hp():
 	if can_take_damage:
 		Global.hp -= 10
-		var_label.update_label()  # Refresh label
+		Global.update_label()  # Refresh label
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
@@ -61,5 +61,5 @@ func _on_damage_cooldown_timer_timeout() -> void:
 
 func add_coin():
 	Global.coins += 1
-	var_label.update_label() 
+	Global.update_label()  
 	
