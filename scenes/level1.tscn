@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
 [ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemyPatrolling.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
-[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://enemy_type_2.tscn" id="5_srd6q"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemy_type_2.tscn" id="5_srd6q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
