@@ -7,7 +7,7 @@ var coins = 0
 var camera_floor = 420
 var camera_ceiling = 265
 var camera_x_min = 340
-var camera_x_max = 4600
+var camera_x_max = 9000
 
 func update_position(new_position):
 	spawn_position = new_position

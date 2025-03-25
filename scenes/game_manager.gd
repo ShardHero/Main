@@ -7,7 +7,7 @@ extends Node
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
 
-func _process(delta):
+func _process(_delta):
 	
 	if player.position.y < 2 and player.position.y > -1:
 		camera.position.y = Global.camera_floor
