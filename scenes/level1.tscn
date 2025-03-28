@@ -1,6 +1,5 @@
 [gd_scene load_steps=21 format=3 uid="uid://cfu6qp58epi4y"]
 
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]

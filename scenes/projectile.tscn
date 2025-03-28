@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://b8nkat7vw5jot"]
 
 [ext_resource type="Texture2D" uid="uid://b8h7fp3ktsk4g" path="res://assets/art/Cannon/Cannon Ball Idle/1.png" id="2_7eb5j"]
@@ -75,10 +74,7 @@ rotation = 1.5708
 scale = Vector2(2.2435, 2.17864)
 sprite_frames = SubResource("SpriteFrames_btctd")
 autoplay = "default"
-<<<<<<< Updated upstream
-=======
 frame_progress = 0.323657
->>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 12)
