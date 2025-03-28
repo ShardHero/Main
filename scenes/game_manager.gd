@@ -57,6 +57,7 @@ func char_lose_hp():
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
 			animation_player.play("fade")
+			animation_player.play("fade_in")
 			main_char.position = Global.spawn_position
 			Global.hp = 100
 
