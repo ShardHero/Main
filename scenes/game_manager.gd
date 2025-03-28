@@ -2,7 +2,6 @@ extends Node
 @onready var damage_timer = $DamageCooldownTimer  # Reference to the timer
 @onready var main_char = %"main_character"
 @onready var var_label = %VarLabel
-@onready var fade = %fade
 @onready var animation_player = %AnimationPlayer
 
 @onready var player = get_node("../main_character")
@@ -45,9 +44,7 @@ func _process(delta):
 				camera.position.x = player.position.x + 50;
 			if player.position.x + 50 <= Global.camera_x_min:
 				camera.position.x = Global.camera_x_min
-	
-	if fade.modulate.a >= 0:
-		fade.modulate.a -= 1*delta
+
 
 
 var can_take_damage = true  # Prevent multiple damage hits
@@ -60,7 +57,8 @@ func char_lose_hp():
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
 			animation_player.play("fade")
-			main_char.queue_free()
+			main_char.position = Global.spawn_position
+			Global.hp = 100
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
