@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bwwsr16jioppj"]
+
+[node name="Canvas" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 118.0
+
+[node name="VarLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326347
+anchor_top = 0.382653
+anchor_right = 0.673653
+anchor_bottom = 0.617347
+offset_left = 9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health: 100 | Coins: 0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
