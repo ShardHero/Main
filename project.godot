@@ -18,3 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scenes/global.tscn"
+VarLabel="*res://scenes/var_label.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
