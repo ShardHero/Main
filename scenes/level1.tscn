@@ -97,6 +97,42 @@ unique_name_in_owner = true
 
 [node name="Canvas" parent="." instance=ExtResource("6_xhcmi")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 118.0
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326347
+anchor_top = 0.382653
+anchor_right = 0.673653
+anchor_bottom = 0.617347
+offset_left = 9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health: 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy2" parent="." instance=ExtResource("3_ker7w")]
+position = Vector2(1416, 310)
+
+[node name="EnemyType2" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
+position = Vector2(2894, 548)
+
+[node name="EnemyType3" parent="." instance=ExtResource("5_srd6q")]
+position = Vector2(3902, 544)
+facing_right = false
+
+[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [node name="Level1Floor_Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Floor_Area"]
