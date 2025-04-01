@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_3cxwl"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="Script" path="res://scenes/var_label.gd" id="5_q5mm8"]
-[ext_resource type="Texture2D" uid="uid://dmyxajgaifdf4" path="res://icon.svg" id="6_fnqun"]
+[ext_resource type="Texture2D" uid="uid://qt5xhxkuhva4" path="res://assets/art/little_white_squre_png.png" id="6_8dafl"]
 [ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
 [ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
@@ -181,9 +181,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="blackbox" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 0)
-position = Vector2(583.5, 328.5)
-scale = Vector2(9.89844, 5.83594)
-texture = ExtResource("6_fnqun")
+texture_filter = 1
+position = Vector2(579.027, 314.029)
+scale = Vector2(5.4131, 3.16419)
+texture = ExtResource("6_8dafl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 unique_name_in_owner = true
