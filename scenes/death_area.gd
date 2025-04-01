@@ -10,5 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 		animation_player.play("fade")
 		animation_player.play("fade_in")
 		body.position = Global.spawn_position
+		Global.hp = 100
+		var_label.update_label()
 		camera.position.y = 420
 		camera.position.x = player.position.x + 300

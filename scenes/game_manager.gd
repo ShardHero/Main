@@ -60,6 +60,7 @@ func char_lose_hp():
 			animation_player.play("fade_in")
 			main_char.position = Global.spawn_position
 			Global.hp = 100
+			var_label.update_label()
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true

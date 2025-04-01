@@ -1,7 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1mmhncol26h7"]
+[gd_scene load_steps=8 format=3 uid="uid://c1mmhncol26h7"]
 
 [ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_en0v4"]
 [ext_resource type="Texture2D" uid="uid://brkd2qiag6wcn" path="res://assets/art/concept_title_draft.png" id="1_hh0x7"]
+[ext_resource type="Texture2D" uid="uid://qt5xhxkuhva4" path="res://assets/art/little_white_squre_png.png" id="3_b7dxm"]
+
+[sub_resource type="Animation" id="Animation_fw70k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1xst0"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r675k"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcpja"]
+_data = {
+"RESET": SubResource("Animation_fw70k"),
+"fade": SubResource("Animation_1xst0"),
+"fade_in": SubResource("Animation_r675k")
+}
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource("1_en0v4")
@@ -29,5 +82,20 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Start Game"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="blackbox" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0)
+texture_filter = 1
+position = Vector2(579.027, 314.029)
+scale = Vector2(5.4131, 3.16419)
+texture = ExtResource("3_b7dxm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_kcpja")
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
