@@ -1,7 +1,7 @@
 #projectile.gd
 extends CharacterBody2D
 
-@export var speed: float = 2400  # Speed of projectile
+@export var speed: float = 240  # Speed of projectile
 @export var move_direction: Vector2 = Vector2(-1, 0)  # Default direction
 @export var move_distance: float = 240  # Distance before reset
 

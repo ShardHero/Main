@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=23 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
 [ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
 [ext_resource type="PackedScene" uid="uid://bcmsxsvfydkux" path="res://scenes/projectile.tscn" id="13_sw2ry"]
+[ext_resource type="PackedScene" uid="uid://db0das6gpa0a8" path="res://scenes/projectile_shooter.tscn" id="14_5dipi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -168,6 +169,12 @@ position = Vector2(6216, 487)
 shape = SubResource("RectangleShape2D_cf5k7")
 
 [node name="Projectile" parent="." instance=ExtResource("13_sw2ry")]
+position = Vector2(904, 404)
+collision_layer = 2
+
+[node name="Projectile_Shooter" parent="." instance=ExtResource("14_5dipi")]
+position = Vector2(897, 407)
+collision_layer = 4
 
 [connection signal="body_entered" from="Level1Up_Area" to="Level1Up_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1Death_Area" to="Level1Death_Area" method="_on_body_entered"]
