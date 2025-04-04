@@ -11,8 +11,6 @@ func _ready():
 	Global.adjust_camera(405, -134, 390, 6116, camera, player)
 	Global.set_var_label(var_label_node)
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

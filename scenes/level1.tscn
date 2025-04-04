@@ -1,17 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=22 format=3 uid="uid://cfu6qp58epi4y"]
 
-[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
+[ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
-[ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemy.tscn" id="3_ker7w"]
+[ext_resource type="PackedScene" path="res://scenes/enemyPatrolling.tscn" id="3_ker7w"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="5_15gxk"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemy_type_2.tscn" id="5_srd6q"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area.gd" id="5_thao0"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_xhcmi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-[ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -97,42 +98,16 @@ unique_name_in_owner = true
 
 [node name="Canvas" parent="." instance=ExtResource("6_xhcmi")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 23.0
-offset_top = 20.0
-offset_right = 190.0
-offset_bottom = 118.0
-
-[node name="HPLabel" type="Label" parent="CanvasLayer/Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.326347
-anchor_top = 0.382653
-anchor_right = 0.673653
-anchor_bottom = 0.617347
-offset_left = 9.0
-offset_right = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Health: 100"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="enemy2" parent="." instance=ExtResource("3_ker7w")]
-position = Vector2(1416, 310)
+[node name="enemy2" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
+position = Vector2(1140, 553)
 
 [node name="EnemyType2" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
-position = Vector2(2894, 548)
+position = Vector2(2325, 454)
 
-[node name="EnemyType3" parent="." instance=ExtResource("5_srd6q")]
-position = Vector2(3902, 544)
+[node name="EnemyType3" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
+position = Vector2(3949, 234)
 facing_right = false
 
-[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [node name="Level1Floor_Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Floor_Area"]
