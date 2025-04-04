@@ -68,13 +68,10 @@ position = Vector2(735, 363)
 collision_layer = 2
 script = ExtResource("2_dk2yi")
 
-[node name="Animated_cannonball" type="AnimatedSprite2D" parent="."]
-position = Vector2(-23.6487, 12.2094)
-rotation = 1.5708
-scale = Vector2(2.2435, 2.17864)
-sprite_frames = SubResource("SpriteFrames_btctd")
-autoplay = "default"
-frame_progress = 0.323657
+[node name="Cannonball" type="Sprite2D" parent="." groups=["enemies"]]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(1.8125, 1.875)
+texture = ExtResource("2_ice1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 12)

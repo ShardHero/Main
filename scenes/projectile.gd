@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var move_direction: Vector2 = Vector2(-1, 0)  # Default direction
 @export var move_distance: float = 240  # Distance before reset
 
-@onready var sprite_2D = $Animated_cannonball
+@onready var sprite_2D = %Cannonball
 
 var start_position: Vector2  # Store initial spawn position
 var traveled_distance: float = 0
