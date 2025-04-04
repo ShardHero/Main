@@ -8,4 +8,5 @@
 # godot-specific files
 .import/
 export_presets.cfg
+*.import
 
