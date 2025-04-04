@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Global="*res://scenes/global.tscn"
-VarLabel="*res://scenes/var_label.gd"
 
 [display]
 
