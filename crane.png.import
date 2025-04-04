@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baibj2t2ya677"
-path="res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"
+uid="uid://dvxbvtqidcuvd"
+path="res://.godot/imported/crane.png-f19d5785a970df5651e243b60e7f9d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://concept_title_draft.png"
-dest_files=["res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"]
+source_file="res://crane.png"
+dest_files=["res://.godot/imported/crane.png-f19d5785a970df5651e243b60e7f9d17.ctex"]
 
 [params]
 

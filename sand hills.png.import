@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baibj2t2ya677"
-path="res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"
+uid="uid://o5fo8b5tm84a"
+path="res://.godot/imported/sand hills.png-aa746249098717d1c0d562ac1e3b49de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://concept_title_draft.png"
-dest_files=["res://.godot/imported/concept_title_draft.png-f6cf14d207a1232ff328caf0f82fb398.ctex"]
+source_file="res://sand hills.png"
+dest_files=["res://.godot/imported/sand hills.png-aa746249098717d1c0d562ac1e3b49de.ctex"]
 
 [params]
 
