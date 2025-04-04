@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bwwsr16jioppj"]
+[gd_scene load_steps=2 format=3 uid="uid://cjr1gc4xrjrv6"]
+
+[ext_resource type="Texture2D" uid="uid://qt5xhxkuhva4" path="res://assets/art/little_white_squre_png.png" id="1_vpirc"]
 
 [node name="Canvas" type="CanvasLayer"]
 
@@ -25,3 +27,10 @@ text = "Health: 100 | Coins: 0
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="blackbox" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0)
+texture_filter = 1
+position = Vector2(574.25, 326.25)
+scale = Vector2(5.25111, 3.08222)
+texture = ExtResource("1_vpirc")

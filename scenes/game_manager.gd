@@ -55,11 +55,11 @@ func char_lose_hp():
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
-			animation_player.play("fade")
+			animation_player.play("fade_out")
 			animation_player.play("fade_in")
 			main_char.position = Global.spawn_position
 			Global.hp = 100
-			var_label.update_label()
+			Global.update_label()
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true

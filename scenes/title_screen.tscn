@@ -92,8 +92,9 @@ position = Vector2(579.027, 314.029)
 scale = Vector2(5.4131, 3.16419)
 texture = ExtResource("3_b7dxm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+root_node = NodePath("../CanvasLayer")
 libraries = {
 "": SubResource("AnimationLibrary_kcpja")
 }
