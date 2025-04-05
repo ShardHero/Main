@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_4f6wy"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="5_at80x"]
