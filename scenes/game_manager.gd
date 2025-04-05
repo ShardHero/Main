@@ -6,12 +6,12 @@ extends Node
 @onready var player = get_node("../main_character")
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
-@onready var previous = 0;
+#@onready var previous = 0;
 #@onready var frame_count = -1
 
 func _process(_delta):
 
-	print("Camera y ", camera.position.y)
+	#print("Camera y ", camera.position.y)
 
 	if player.position.y < 2 and player.position.y > -1:
 		camera.position.y = Global.camera_floor
@@ -29,15 +29,19 @@ func _process(_delta):
 					camera.position.y = Global.camera_ceiling
 		if Input.is_action_just_pressed("ui_down"):
 			print("DOWN PRESSED")
-			Global.look_down(Global.camera_floor, camera, previous)
+			Global.look_down(Global.camera_floor, camera)
 			if Global.looking_down:
 				print("LOOKING DOWN")
+				print("PREVIOUS ", Global.initial)
 			#frame_count = 60
 			
 		if Input.is_action_just_released("ui_down") and Global.looking_down:
 			print("DOWN RELEASED")
 			Global.looking_down = false
-			camera.position.y = previous
+			if(camera.position.y>=Global.initial):
+				camera.position.y
+			else:
+				camera.position.y = Global.initial
 		
 		#CAMERA CEILING 265??
 	if not player.is_on_floor():

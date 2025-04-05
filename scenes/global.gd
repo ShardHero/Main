@@ -10,22 +10,23 @@ var camera_x_min = 340
 var camera_x_max = 6000
 var var_label = null
 var looking_down = false
+var initial = 0
 
 func update_position(new_position):
 	spawn_position = new_position
 
-func look_down(floor, camera_node, initial):
-	initial = camera_node.position.y;
+func look_down(floor, camera_node):
+	Global.initial = camera_node.position.y;
 		
-	if(initial + 120 > floor and initial!=floor):
+	if(initial + 120 > floor and Global.initial!=floor):
 		camera_node.position.y = floor
 		looking_down = true
 	else:
-		if initial!=floor:
+		if Global.initial!=floor:
 			camera_node.position.y = camera_node.position.y + 120
 			looking_down = true
 		
-	if initial == floor:
+	if Global.initial == floor:
 		looking_down = false
 
 #Must be fed max and min values AND the camera node in order
