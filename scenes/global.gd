@@ -10,6 +10,9 @@ var camera_x_min = 340
 var camera_x_max = 6000
 var var_label = null
 
+# flag denoting if player should spawn from diff position other than default pos stated in level*.gd
+var spawn_flag = false
+
 func update_position(new_position):
 	spawn_position = new_position
 
@@ -53,3 +56,6 @@ func update_label(): #update label with current state of variables
 	if var_label:
 		var_label.text = "Health: " + str(Global.hp) + " | Coins: " + str(Global.coins)
 	print("Label updated:", var_label.text)  # Confirm the label is set
+	
+func set_spawn_flag(flag):
+	spawn_flag = flag
