@@ -33,12 +33,15 @@ func _process(_delta):
 			if Global.looking_down:
 				print("LOOKING DOWN")
 				print("PREVIOUS ", Global.initial)
+				print("CURRENT  ", camera.position.y)
 			#frame_count = 60
 			
 		if Input.is_action_just_released("ui_down") and Global.looking_down:
-			print("DOWN RELEASED")
+			print("\n\nDOWN RELEASED")
 			Global.looking_down = false
-			if(camera.position.y>=Global.initial):
+			print("PREVIOUS ", Global.initial)
+			print("CURRENT ", camera.position.y)
+			if(player.position.y>=Global.initial):
 				camera.position.y
 			else:
 				camera.position.y = Global.initial
