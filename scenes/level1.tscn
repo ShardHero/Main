@@ -1,18 +1,26 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=30 format=3 uid="uid://cfu6qp58epi4y"]
 
-[ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
+[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="1_unyct"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_ff2mj"]
-[ext_resource type="PackedScene" path="res://scenes/enemyPatrolling.tscn" id="3_ker7w"]
+[ext_resource type="PackedScene" uid="uid://sjigmrytna27" path="res://scenes/enemyPatrolling.tscn" id="3_ker7w"]
+[ext_resource type="Texture2D" uid="uid://d236w2ty7fttf" path="res://1.png" id="3_r6c71"]
+[ext_resource type="Texture2D" uid="uid://cqytxnh1souxt" path="res://2.png" id="4_juv7t"]
+[ext_resource type="Texture2D" uid="uid://ckmh1w8i858f5" path="res://3.png" id="5_3bf5p"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="5_15gxk"]
+[ext_resource type="Texture2D" uid="uid://dqxpniiw3aqgk" path="res://b_6.png" id="5_eiv2c"]
 [ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemy_type_2.tscn" id="5_srd6q"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area.gd" id="5_thao0"]
+[ext_resource type="Texture2D" uid="uid://dcpnlek81hd80" path="res://4.png" id="6_nrd0e"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_xhcmi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="Texture2D" uid="uid://cv47b608jinau" path="res://b_6.2.png" id="9_6dyj3"]
+[ext_resource type="PackedScene" uid="uid://vdj4i8x4pxm1" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="Texture2D" uid="uid://b1w8kl2g7ar0n" path="res://b_4.png" id="14_0vuyb"]
+[ext_resource type="Texture2D" uid="uid://c0mhg84i0rr4g" path="res://b_5.png" id="14_cqetm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nax6r"]
 
@@ -76,7 +84,131 @@ size = Vector2(142.25, 20)
 [node name="Level1Base" type="Node2D"]
 script = ExtResource("1_pagok")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+
 [node name="MovingCamera" parent="." instance=ExtResource("1_fgf55")]
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(924, 250)
+scale = Vector2(2.35667, 2.35667)
+texture = ExtResource("3_r6c71")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(2931, 138.25)
+scale = Vector2(2.85167, 2.85167)
+texture = ExtResource("3_r6c71")
+
+[node name="9" type="Sprite2D" parent="."]
+position = Vector2(5330.3, 125)
+scale = Vector2(3.15175, 2.75349)
+texture = ExtResource("3_r6c71")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(4495, 449)
+scale = Vector2(2.65333, 2.65333)
+texture = ExtResource("4_juv7t")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(6444, 391)
+scale = Vector2(2.28, 2.28)
+texture = ExtResource("4_juv7t")
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(2630, 410)
+scale = Vector2(2.01, 2.01)
+texture = ExtResource("4_juv7t")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(3670, 355)
+scale = Vector2(2.29667, 2.29667)
+texture = ExtResource("5_3bf5p")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(5420, 363)
+scale = Vector2(2.18, 2.18)
+texture = ExtResource("5_3bf5p")
+
+[node name="6" type="Sprite2D" parent="."]
+position = Vector2(2014, 536)
+scale = Vector2(1.86667, 1.86667)
+texture = ExtResource("5_3bf5p")
+
+[node name="14" type="Sprite2D" parent="."]
+position = Vector2(2584, 532)
+scale = Vector2(1.11353, 1.15958)
+texture = ExtResource("6_nrd0e")
+
+[node name="15" type="Sprite2D" parent="."]
+position = Vector2(3523, 419)
+scale = Vector2(1.24333, 1.24333)
+texture = ExtResource("6_nrd0e")
+
+[node name="16" type="Sprite2D" parent="."]
+position = Vector2(4587, 386)
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("6_nrd0e")
+
+[node name="17" type="Sprite2D" parent="."]
+position = Vector2(5736, 252)
+scale = Vector2(1.57, 1.57)
+texture = ExtResource("6_nrd0e")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(946, 444)
+scale = Vector2(2.32833, 2.32833)
+texture = ExtResource("4_juv7t")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(892, 510)
+scale = Vector2(2.255, 2.255)
+texture = ExtResource("5_3bf5p")
+
+[node name="7" type="Sprite2D" parent="."]
+position = Vector2(595, 528)
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("6_nrd0e")
+
+[node name="8" type="Sprite2D" parent="."]
+position = Vector2(1640, 530)
+scale = Vector2(1.25333, 1.25333)
+texture = ExtResource("6_nrd0e")
+
+[node name="B5" type="Sprite2D" parent="."]
+position = Vector2(131, 495)
+scale = Vector2(4.93333, 5.05)
+texture = ExtResource("14_cqetm")
+
+[node name="B4" type="Sprite2D" parent="."]
+position = Vector2(725, 433)
+scale = Vector2(3.63333, 3.63333)
+texture = ExtResource("14_0vuyb")
+
+[node name="B6" type="Sprite2D" parent="."]
+position = Vector2(1579, 399)
+scale = Vector2(2.21, 2.21)
+texture = ExtResource("5_eiv2c")
+
+[node name="B6_2" type="Sprite2D" parent="."]
+position = Vector2(973, 434)
+scale = Vector2(2.22, 2.22)
+texture = ExtResource("9_6dyj3")
+
+[node name="B7" type="Sprite2D" parent="."]
+position = Vector2(3811, 132)
+scale = Vector2(4.6, 4.6)
+texture = ExtResource("14_0vuyb")
+
+[node name="B6_3" type="Sprite2D" parent="."]
+position = Vector2(5069, 239)
+scale = Vector2(2.59, 2.59)
+texture = ExtResource("9_6dyj3")
+
+[node name="B8" type="Sprite2D" parent="."]
+position = Vector2(4582, 138)
+scale = Vector2(0.900004, 1.23)
+texture = ExtResource("5_eiv2c")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
