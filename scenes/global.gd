@@ -56,7 +56,7 @@ func adjust_camera(floor, ceiling, x_min, x_max, camera_node, player):
 		
 	camera_node.position.y = player.position.y
 	if(camera_node.position.y<ceiling):
-		camera_node.position.y = ceiling		
+		camera_node.position.y = ceiling
 	if(camera_node.position.y>floor):
 		camera_node.position.y = floor
 	

@@ -27,26 +27,26 @@ func _process(_delta):
 				camera.position.y = player.position.y + 540;
 				if camera.position.y <= Global.camera_ceiling:
 					camera.position.y = Global.camera_ceiling
-		if Input.is_action_just_pressed("ui_down"):
-			print("DOWN PRESSED")
-			Global.look_down(Global.camera_floor, camera)
-			if Global.looking_down:
-				print("LOOKING DOWN")
-				print("PREVIOUS ", Global.initial)
-				print("CURRENT  ", camera.position.y)
-			#frame_count = 60
-			
-		if Input.is_action_just_released("ui_down") and Global.looking_down:
-			print("\n\nDOWN RELEASED")
-			Global.looking_down = false
-			print("PREVIOUS ", Global.initial)
-			print("CURRENT ", camera.position.y)
-			if(player.position.y>=Global.initial):
-				camera.position.y
-			else:
-				camera.position.y = Global.initial
 		
-		#CAMERA CEILING 265??
+				if Input.is_action_just_pressed("ui_down"):
+					print("\n\nDOWN PRESSED")
+					Global.look_down(Global.camera_floor, camera)
+					if Global.looking_down:
+						print("LOOKING DOWN")
+						print("PREVIOUS ", Global.initial)
+						print("CURRENT  ", camera.position.y)
+				
+			
+	if Input.is_action_just_released("ui_down") and Global.looking_down:
+		print("\nDOWN RELEASED")
+		Global.looking_down = false
+		print("PREVIOUS ", Global.initial)
+		print("CURRENT ", camera.position.y)
+		if(camera.position.y>=Global.initial + 120):
+			camera.position.y
+		else:
+			camera.position.y = Global.initial
+		
 	if not player.is_on_floor():
 		if player.position.y > y_pos+0 or player.position.y < y_pos-0:
 			camera.position.y += player.velocity.y/100;
