@@ -7,7 +7,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var camera = get_node("MovingCamera")
-	#Floor, Ceiling, Xmin, Xmax	
+	#Floor, Ceiling, Xmin, Xmax
 	Global.adjust_camera(405, -134, 390, 6116, camera, player)
 	Global.set_var_label(var_label_node)
 

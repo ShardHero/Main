@@ -4,6 +4,14 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "main_character":
-		body.position = Global.spawn_position
-		camera.position.y = 420
-		camera.position.x = player.position.x + 300
+		var scene_name = get_tree().current_scene.scene_file_path
+		if scene_name not in Global.check_dict:
+			body.position = Global.spawn_position
+		else:
+			body.position = Global.check_dict[scene_name]
+		camera.position.y = player.position.y - 100
+		camera.position.x = player.position.x + 150
+		Global.hp -= 10
+		Global.update_label()  # Refresh label
+		if Global.hp <= 0:
+			Global.on_player_death(player, camera, scene_name)

@@ -9,8 +9,14 @@ const JUMP_VELOCITY = -550.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
-	self.position = Global.spawn_position
-	
+	var scene_name = get_tree().current_scene.scene_file_path
+	print("scene_name:", scene_name)
+	if scene_name not in Global.check_dict:
+		print("hello!!")
+		self.position = Global.spawn_position
+	else:
+		self.position = Global.check_dict[scene_name]
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

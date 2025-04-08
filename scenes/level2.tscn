@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dn37wpvt2cxms"]
+[gd_scene load_steps=14 format=3 uid="uid://djw0nlqqhve3u"]
 
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
@@ -145,6 +145,12 @@ layer_0/tile_data = PackedInt32Array(851957, 589824, 0, 917493, 589824, 1, 98302
 
 [node name="Checkpoint" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(-3292, 72)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(170, 554)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(504, 552)
 
 [node name="Level1Area" type="Area2D" parent="."]
 script = ExtResource("8_dkrrh")

@@ -1,4 +1,5 @@
 extends Node
+@onready var damage_timer = $DamageCooldownTimer  # Reference to the timer
 
 var spawn_position = Vector2(2,-1)
 var hp = 100
@@ -10,11 +11,10 @@ var camera_x_min = 340
 var camera_x_max = 6000
 var var_label = null
 
+var check_dict = {}
+
 # flag denoting if player should spawn from diff position other than default pos stated in level*.gd
 var spawn_flag = false
-
-func update_position(new_position):
-	spawn_position = new_position
 
 #Must be fed max and min values AND the camera node in order
 #to set its initial location
@@ -46,8 +46,6 @@ func adjust_camera(floor, ceiling, x_min, x_max, camera_node, player):
 		camera_node.position.y = ceiling		
 	if(camera_node.position.y>floor):
 		camera_node.position.y = floor
-	
-
 
 func set_var_label(label: Label):
 	var_label = label
@@ -59,3 +57,17 @@ func update_label(): #update label with current state of variables
 	
 func set_spawn_flag(flag):
 	spawn_flag = flag
+
+func on_player_death(body, camera, scene_name): # assuming body is main_char AND camera is MovingCamera
+	if scene_name not in check_dict:
+		body.position = Global.spawn_position
+	else:
+		body.position = check_dict[scene_name]
+	camera.position.y = body.position.y - 100
+	camera.position.x = body.position.x + 150
+	Global.coins = max(Global.coins - 10, 0)
+	Global.hp = 100
+	Global.update_label()
+
+func update_latest_checkpoint(scene_name, checkpoint):
+	check_dict[scene_name] = checkpoint.global_position
