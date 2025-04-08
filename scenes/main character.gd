@@ -4,12 +4,30 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 @onready var char_sprite_2d = $AnimatedSprite2D
 @onready var game_manager = %GameManager
+@onready var fist_hitbox = $Fist
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	self.position = Global.spawn_position
+	fist_hitbox.monitoring = false
+	
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			print("TEST")
+			attack()
+
+func attack():
+	fist_hitbox.monitoring = true
+	await get_tree().create_timer(0.1).timeout
+	fist_hitbox.monitoring = false
+
+func _on_Fist_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		body.queue_free()
+		#body.take_damage(5)
 	
 func _physics_process(delta):
 	# Add the gravity.

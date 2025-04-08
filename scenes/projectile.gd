@@ -29,8 +29,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(movement)
 	if (collision and collision.get_collider().name == 'main_character') or traveled_distance >= move_distance:
 		despawn_projectile()  # Despawn on collision or max distance
-
-	traveled_distance += movement.length()
+	else: 
+		traveled_distance += movement.length()
 
 func despawn_projectile():
 	hide()  # Make the projectile invisible
