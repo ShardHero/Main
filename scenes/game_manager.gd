@@ -29,7 +29,7 @@ func _process(_delta):
 		if not camera.position.y == Global.camera_floor and not Global.looking_down and not Global.looking_up:
 				if Input.is_action_just_pressed("down"):
 					Global.look_down(Global.camera_floor, camera)
-		if not camera.position.y == Global.camera_ceiling and not Global.looking_up and not Global.looking_down:
+		if not camera.position.y == Global.camera_floor and not camera.position.y == Global.camera_ceiling and not Global.looking_up and not Global.looking_down:
 				if Input.is_action_just_pressed("up"):
 					Global.look_up(Global.camera_ceiling, camera)
 				
@@ -44,7 +44,7 @@ func _process(_delta):
 	if Input.is_action_just_released("up") and Global.looking_up and not Global.looking_down:
 		Global.looking_up = false
 		if(camera.position.y<Global.initial - 120):
-			camera.position.y
+			camera.position.y = Global.initial
 		else:
 			camera.position.y = Global.initial
 		
