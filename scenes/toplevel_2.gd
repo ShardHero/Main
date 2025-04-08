@@ -4,10 +4,11 @@ extends Node2D
 @onready var main_character: CharacterBody2D = %main_character
 @onready var player = get_node("main_character")
 @onready var camera = get_node("MovingCamera")
+@onready var animation_player = %AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	animation_player.play("fade_in")
 	Global.set_var_label(var_label_node)
 	Global.update_label()
 	main_character.position = Vector2(300,0)
