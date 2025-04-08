@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwfp83xubyap1"]
+[gd_scene load_steps=9 format=3 uid="uid://d3wp6jo35nesw"]
 
 [ext_resource type="Script" path="res://scenes/toplevel_2.gd" id="1_qcyny"]
-[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="1_wnpkx"]
+[ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="1_wnpkx"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_wwdbi"]
-[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="3_vfcg8"]
+[ext_resource type="PackedScene" uid="uid://2w81npm6vlt5" path="res://scenes/moving_camera.tscn" id="3_vfcg8"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_w3fy5"]
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="5_2w6av"]
+[ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="5_2w6av"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b42ey"]
 texture = ExtResource("4_w3fy5")
