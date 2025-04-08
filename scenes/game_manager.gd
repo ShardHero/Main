@@ -11,9 +11,7 @@ extends Node
 
 func _process(_delta):
 
-	#print("Camera y ", camera.position.y)
-
-	if player.position.y < 2 and player.position.y > -1:
+	if player.position.y < 2 and player.position.y > -1 and not Global.looking_up:
 		camera.position.y = Global.camera_floor
 		
 	if camera.position.y > Global.camera_floor:
@@ -22,27 +20,30 @@ func _process(_delta):
 	if player.is_on_floor():
 		y_pos = player.position.y;
 		
-		if not camera.position.y == Global.camera_floor and not Global.looking_down:
+		if not camera.position.y == Global.camera_floor and not Global.looking_down and not Global.looking_up:
 			if not player.position.y + 540 > Global.camera_floor:
 				camera.position.y = player.position.y + 540;
 				if camera.position.y <= Global.camera_ceiling:
 					camera.position.y = Global.camera_ceiling
 		
-				if Input.is_action_just_pressed("ui_down"):
-					print("\n\nDOWN PRESSED")
+		if not camera.position.y == Global.camera_floor and not Global.looking_down and not Global.looking_up:
+				if Input.is_action_just_pressed("down"):
 					Global.look_down(Global.camera_floor, camera)
-					if Global.looking_down:
-						print("LOOKING DOWN")
-						print("PREVIOUS ", Global.initial)
-						print("CURRENT  ", camera.position.y)
+		if not camera.position.y == Global.camera_ceiling and not Global.looking_up and not Global.looking_down:
+				if Input.is_action_just_pressed("up"):
+					Global.look_up(Global.camera_ceiling, camera)
 				
 			
-	if Input.is_action_just_released("ui_down") and Global.looking_down:
-		print("\nDOWN RELEASED")
+	if Input.is_action_just_released("down") and Global.looking_down and not Global.looking_up:
 		Global.looking_down = false
-		print("PREVIOUS ", Global.initial)
-		print("CURRENT ", camera.position.y)
-		if(camera.position.y>=Global.initial + 120):
+		if(camera.position.y>Global.initial + 120):
+			camera.position.y
+		else:
+			camera.position.y = Global.initial
+			
+	if Input.is_action_just_released("up") and Global.looking_up and not Global.looking_down:
+		Global.looking_up = false
+		if(camera.position.y<Global.initial - 120):
 			camera.position.y
 		else:
 			camera.position.y = Global.initial
@@ -53,14 +54,14 @@ func _process(_delta):
 			if camera.position.y <= Global.camera_ceiling: 
 				camera.position.y = Global.camera_ceiling
 	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		if player.velocity[0] != 0:
 			if player.position.x + 300 < Global.camera_x_max && player.position.x + 300 > Global.camera_x_min:
 				camera.position.x = player.position.x + 300;
 			if player.position.x + 300 >= Global.camera_x_max:
 				camera.position.x = Global.camera_x_max
 			
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		if player.velocity[0] != 0:
 			if player.position.x + 50 < Global.camera_x_max && player.position.x + 50 > Global.camera_x_min:
 				camera.position.x = player.position.x + 50;

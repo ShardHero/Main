@@ -10,6 +10,7 @@ var camera_x_min = 340
 var camera_x_max = 6000
 var var_label = null
 var looking_down = false
+var looking_up = false
 var initial = 0
 
 func update_position(new_position):
@@ -17,7 +18,7 @@ func update_position(new_position):
 
 func look_down(floor, camera_node):
 	Global.initial = camera_node.position.y;
-		
+	
 	if(initial + 120 > floor and Global.initial!=floor):
 		camera_node.position.y = floor
 		looking_down = true
@@ -28,6 +29,20 @@ func look_down(floor, camera_node):
 		
 	if Global.initial == floor:
 		looking_down = false
+
+func look_up(ceiling, camera_node):
+	Global.initial = camera_node.position.y
+	
+	if(initial - 120 < ceiling and Global.initial!=ceiling):
+		camera_node.position.y = ceiling
+		looking_up = true
+	else:
+		if Global.initial!=ceiling:
+			camera_node.position.y = camera_node.position.y - 120
+			looking_up = true
+			
+	if Global.initial == ceiling:
+		looking_up = false
 
 #Must be fed max and min values AND the camera node in order
 #to set its initial location
