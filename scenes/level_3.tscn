@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="3_idjk7"]
 [ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
-[ext_resource type="Texture2D" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
+[ext_resource type="Texture2D" uid="uid://segwhkuqpm5o" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
 
@@ -90,8 +90,6 @@ sources/1 = SubResource("TileSetAtlasSource_ad6x2")
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_y0cej")
 
-[node name="GameManager" parent="." instance=ExtResource("2_gpvj2")]
-
 [node name="main_character" parent="." instance=ExtResource("3_idjk7")]
 unique_name_in_owner = true
 position = Vector2(-97, -144)
@@ -109,3 +107,6 @@ layer_0/tile_data = PackedInt32Array(786439, 524289, 0, 786438, 458753, 0, 78643
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_bnmbm")]
 position = Vector2(4200, 408)
+
+[node name="GameManager" parent="." instance=ExtResource("2_gpvj2")]
+unique_name_in_owner = true

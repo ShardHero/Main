@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7r5uxtd4fltb"]
+[gd_scene load_steps=11 format=3 uid="uid://b7r5uxtd4fltb"]
 
 [ext_resource type="Script" path="res://scenes/toplevel_2.gd" id="1_qcyny"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="1_wnpkx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="3_vfcg8"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_w3fy5"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="5_2w6av"]
+[ext_resource type="Script" path="res://scenes/level_1_down.gd" id="7_mr80k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b42ey"]
 texture = ExtResource("4_w3fy5")
@@ -113,6 +114,7 @@ size = Vector2(144, 27)
 script = ExtResource("1_qcyny")
 
 [node name="GameManager" parent="." instance=ExtResource("1_wnpkx")]
+unique_name_in_owner = true
 
 [node name="main_character" parent="." instance=ExtResource("2_wwdbi")]
 unique_name_in_owner = true
@@ -130,13 +132,18 @@ layer_0/tile_data = PackedInt32Array(786433, 589824, 0, 786434, 655360, 0, 78643
 [node name="Canvas" parent="." instance=ExtResource("5_2w6av")]
 
 [node name="LevelDown_1" type="Area2D" parent="."]
+script = ExtResource("7_mr80k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDown_1"]
 position = Vector2(216, 622.5)
 shape = SubResource("RectangleShape2D_6jpnk")
 
 [node name="LevelDown_2" type="Area2D" parent="."]
+script = ExtResource("7_mr80k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDown_2"]
 position = Vector2(-72, 622)
 shape = SubResource("RectangleShape2D_6jpnk")
+
+[connection signal="body_entered" from="LevelDown_1" to="LevelDown_1" method="_on_body_entered"]
+[connection signal="body_entered" from="LevelDown_2" to="LevelDown_2" method="_on_body_entered"]

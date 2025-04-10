@@ -71,3 +71,4 @@ func on_player_death(body, camera, scene_name): # assuming body is main_char AND
 
 func update_latest_checkpoint(scene_name, checkpoint):
 	check_dict[scene_name] = checkpoint.global_position
+	print(check_dict[scene_name].x)

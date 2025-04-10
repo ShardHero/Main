@@ -15,6 +15,7 @@ func _ready() -> void:
 		print("hello!!")
 		self.position = Global.spawn_position
 	else:
+		print("we have a checkpoint")
 		self.position = Global.check_dict[scene_name]
 
 func _physics_process(delta):

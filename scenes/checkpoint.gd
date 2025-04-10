@@ -10,4 +10,4 @@ func _on_body_entered(body: Node2D) -> void:
 		var scene_name = get_tree().current_scene.scene_file_path
 		print("scene_name:", scene_name)
 		Global.update_latest_checkpoint(scene_name, body)
-		print("checked off!")
+		print("checked off", Global.check_dict[scene_name])
