@@ -3,7 +3,6 @@ extends Node
 @onready var main_char = %"main_character"
 @onready var animation_player = %AnimationPlayer
 # VarLabel is autoloaded and global.
-
 @onready var player = get_node("../main_character")
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
