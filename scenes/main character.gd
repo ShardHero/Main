@@ -9,8 +9,15 @@ const JUMP_VELOCITY = -550.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
-	self.position = Global.spawn_position
-	
+	var scene_name = get_tree().current_scene.scene_file_path
+	print("scene_name:", scene_name)
+	if scene_name not in Global.check_dict:
+		print("hello!!")
+		self.position = Global.spawn_position
+	else:
+		print("we have a checkpoint")
+		self.position = Global.check_dict[scene_name]
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -27,7 +34,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
