@@ -1,15 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=19 format=3 uid="uid://djw0nlqqhve3u"]
 
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="1_77g56"]
+[ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
-[ext_resource type="Texture2D" uid="uid://qt5xhxkuhva4" path="res://assets/art/little_white_squre_png.png" id="3_cy41m"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="5_at80x"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_8crx6"]
 [ext_resource type="Script" path="res://scenes/area_back_level1_top1.gd" id="8_dkrrh"]
-[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
+[ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3aj"]
 texture = ExtResource("4_ydwqi")
@@ -159,6 +159,7 @@ _data = {
 "fade_in": SubResource("Animation_feyno"),
 "fade_out": SubResource("Animation_1dije")
 }
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
 size = Vector2(144, 20)
 
@@ -184,38 +185,6 @@ script = ExtResource("4_ci38a")
 unique_name_in_owner = true
 one_shot = true
 
-[node name="Canvas" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="Canvas"]
-offset_left = 23.0
-offset_top = 20.0
-offset_right = 190.0
-offset_bottom = 118.0
-
-[node name="VarLabel" type="Label" parent="Canvas/Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.326347
-anchor_top = 0.382653
-anchor_right = 0.673653
-anchor_bottom = 0.617347
-offset_left = 9.0
-offset_right = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Health: 100"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="blackbox" type="Sprite2D" parent="Canvas"]
-modulate = Color(0, 0, 0, 1)
-texture_filter = 1
-position = Vector2(574.25, 326.25)
-scale = Vector2(5.25111, 3.08222)
-texture = ExtResource("3_cy41m")
-
 [node name="Global" parent="." instance=ExtResource("7_8crx6")]
 
 [node name="Collectables group" type="Node" parent="."]
@@ -236,7 +205,6 @@ libraries = {
 "": SubResource("AnimationLibrary_hyb1j")
 }
 
-[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(170, 554)
 
@@ -250,7 +218,8 @@ script = ExtResource("8_dkrrh")
 position = Vector2(312, 626)
 shape = SubResource("RectangleShape2D_6ufgo")
 
-[node name="GameManager" parent="." instance=ExtResource("9_gfk5u")]
+[node name="GameManager2" parent="." instance=ExtResource("9_gfk5u")]
 unique_name_in_owner = true
 
+[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]

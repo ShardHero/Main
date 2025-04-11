@@ -29,6 +29,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="blackbox" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 0)
 texture_filter = 1
 position = Vector2(574.25, 326.25)
