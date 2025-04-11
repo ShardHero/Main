@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://clyhkldgyshrv"]
+[gd_scene load_steps=15 format=3 uid="uid://clyhkldgyshrv"]
 
 [ext_resource type="Script" path="res://scenes/level_4.gd" id="1_3a3b4"]
 [ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="1_7pe4s"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_e1tr5"]
-[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="3_blgdn"]
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="4_tqdgr"]
+[ext_resource type="PackedScene" uid="uid://2w81npm6vlt5" path="res://scenes/moving_camera.tscn" id="3_blgdn"]
+[ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="4_tqdgr"]
 [ext_resource type="Texture2D" uid="uid://b3h244oy1ifme" path="res://assets/art/DigitalTileset.png" id="6_6kji0"]
-[ext_resource type="Texture2D" uid="uid://byng31ppuuc4h" path="res://assets/art/BackgroundPanelsGreen.png" id="7_yby3w"]
-[ext_resource type="Texture2D" uid="uid://jw8dtlnnobjl" path="res://assets/art/BackgroundPanelsBlue.png" id="8_eloo8"]
+[ext_resource type="Texture2D" uid="uid://53ihyy2hnsj3" path="res://assets/art/BackgroundPanelsGreen.png" id="7_yby3w"]
+[ext_resource type="Texture2D" uid="uid://cu5x7e517n1cq" path="res://assets/art/BackgroundPanelsBlue.png" id="8_eloo8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64vv8"]
 texture = ExtResource("6_6kji0")
@@ -165,6 +165,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_hyb1j")
 }
+
 [node name="GreenBackground1" type="TextureRect" parent="."]
 z_index = -1
 texture_filter = 1
