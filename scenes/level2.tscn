@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://7xhlv8w0aafk"]
+[gd_scene load_steps=14 format=3 uid="uid://djw0nlqqhve3u"]
 
-[ext_resource type="Script" path="res://scenes/level_2.gd" id="1_4f6wy"]
+[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="1_77g56"]
+[ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
-[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="5_at80x"]
-[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="5_nquih"]
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_ek50m"]
-[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="7_hgpvb"]
+[ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_8crx6"]
+[ext_resource type="Script" path="res://scenes/area_back_level1_top1.gd" id="8_dkrrh"]
+[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3aj"]
 texture = ExtResource("4_ydwqi")
@@ -107,12 +107,26 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tv3aj")
 sources/2 = SubResource("TileSetAtlasSource_u6od4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
+size = Vector2(144, 20)
+
 [node name="Level2Base" type="Node2D"]
-script = ExtResource("1_4f6wy")
+script = ExtResource("1_bj6ep")
+
+[node name="Canvas" parent="." instance=ExtResource("1_77g56")]
+
+[node name="MovingCamera" type="Camera2D" parent="."]
+position = Vector2(340, 420)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
 
 [node name="main_character" parent="." instance=ExtResource("2_12mcp")]
 unique_name_in_owner = true
 position = Vector2(2, -1)
+
+[node name="Global" parent="." instance=ExtResource("7_8crx6")]
+
+[node name="Collectables group" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -124,8 +138,20 @@ layer_0/tile_data = PackedInt32Array(851957, 589824, 0, 917493, 589824, 1, 98302
 [node name="Checkpoint" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(-3292, 72)
 
-[node name="GameManager" parent="." instance=ExtResource("5_nquih")]
+[node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(170, 554)
 
-[node name="Canvas" parent="." instance=ExtResource("6_ek50m")]
+[node name="Checkpoint3" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(554, 552)
 
-[node name="MovingCamera" parent="." instance=ExtResource("7_hgpvb")]
+[node name="Level1Area" type="Area2D" parent="."]
+script = ExtResource("8_dkrrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Area"]
+position = Vector2(312, 626)
+shape = SubResource("RectangleShape2D_6ufgo")
+
+[node name="GameManager" parent="." instance=ExtResource("9_gfk5u")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
