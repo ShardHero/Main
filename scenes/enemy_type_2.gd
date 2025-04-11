@@ -15,7 +15,13 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		$Sprite2D.animation = "Leaping"
 	
+	if(is_on_floor()&& velocity.x == 0):
+		$Sprite2D.animation = "Idle"
+		
+	if(is_on_floor()&& velocity.x != 0):
+		$Sprite2D.animation = "Running"
 		
 	if(facing_right && $Vision.is_colliding() && is_on_floor()):
 		if($Vision.get_collider() is CharacterBody2D):
