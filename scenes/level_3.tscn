@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="3_idjk7"]
 [ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
-[ext_resource type="Texture2D" uid="uid://segwhkuqpm5o" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
+[ext_resource type="Texture2D" uid="uid://b3h244oy1ifme" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
 [ext_resource type="Script" path="res://scenes/level_boss_room.gd" id="8_s2c7o"]

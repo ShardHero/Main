@@ -10,4 +10,4 @@ func _ready() -> void:
 	Global.set_var_label(var_label_node)
 	Global.update_label()
 	main_character.position = Vector2(0,0)
-	Global.adjust_camera(600, -250, -7900, 1050, camera, player)
+	Global.adjust_camera(450, 100, -7900, 1050, camera, player)
