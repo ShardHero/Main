@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccqd8dov1uwyy"]
+[gd_scene load_steps=12 format=3 uid="uid://ccqd8dov1uwyy"]
 
 [ext_resource type="Script" path="res://scenes/level_3.gd" id="1_y0cej"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://segwhkuqpm5o" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
+[ext_resource type="Script" path="res://scenes/level_boss_room.gd" id="8_s2c7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad6x2"]
 texture = ExtResource("5_nr4sx")
@@ -87,6 +88,9 @@ texture = ExtResource("5_nr4sx")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ad6x2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7782u"]
+size = Vector2(123, 147)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_y0cej")
 
@@ -108,5 +112,20 @@ layer_0/tile_data = PackedInt32Array(786439, 524289, 0, 786438, 458753, 0, 78643
 [node name="Checkpoint" parent="." instance=ExtResource("7_bnmbm")]
 position = Vector2(4200, 408)
 
+[node name="Checkpoint2" parent="." instance=ExtResource("7_bnmbm")]
+position = Vector2(2124, 267)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("7_bnmbm")]
+position = Vector2(6199, 645)
+
 [node name="GameManager" parent="." instance=ExtResource("2_gpvj2")]
 unique_name_in_owner = true
+
+[node name="LevelBossRoom" type="Area2D" parent="."]
+script = ExtResource("8_s2c7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBossRoom"]
+position = Vector2(9195, 311)
+shape = SubResource("RectangleShape2D_7782u")
+
+[connection signal="body_entered" from="LevelBossRoom" to="LevelBossRoom" method="_on_body_entered"]

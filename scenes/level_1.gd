@@ -13,12 +13,6 @@ func _ready():
 	Global.adjust_camera(405, -134, 390, 6116, camera, player)
 	Global.set_var_label(var_label_node)
 
-	var level3_scene = load("res://scenes/level_3.tscn")
-	print("Scene loaded: ", level3_scene)
-
-	var instance = level3_scene.instantiate()
-	get_tree().root.add_child(instance)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
