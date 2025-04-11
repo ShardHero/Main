@@ -83,6 +83,8 @@ func char_lose_hp():
 			animation_player.play("fade_out")
 			animation_player.play("fade_in")
 			Global.on_player_death(player, camera, scene_name)
+			
+
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true

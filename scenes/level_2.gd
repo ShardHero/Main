@@ -8,10 +8,10 @@ extends Node2D
 @onready var blackbox = $Canvas/blackbox
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	blackbox.modulate.a = 1.0
 	call_deferred("_start_scene")
-
+	
 func _start_scene():
 	Global.set_var_label(var_label_node)
 	Global.update_label()
