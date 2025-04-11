@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1rhr2lb8ebti"]
+[gd_scene load_steps=2 format=3 uid="uid://t8ygdmcrh8ur"]
 
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="1_pm23q"]
 
