@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://doi770nyq1sex"]
+[gd_scene load_steps=14 format=3 uid="uid://doi770nyq1sex"]
 
 [ext_resource type="Script" path="res://scenes/level_3.gd" id="1_y0cej"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="3_idjk7"]
-[ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
+[ext_resource type="PackedScene" uid="uid://ccnjfq03jgwpl" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
 [ext_resource type="Texture2D" uid="uid://b3h244oy1ifme" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
 [ext_resource type="Script" path="res://scenes/level_boss_room.gd" id="8_s2c7o"]
+[ext_resource type="Texture2D" uid="uid://jw8dtlnnobjl" path="res://assets/art/BackgroundPanelsBlue.png" id="9_vgqap"]
+[ext_resource type="Texture2D" uid="uid://byng31ppuuc4h" path="res://assets/art/BackgroundPanelsGreen.png" id="10_x44kw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad6x2"]
 texture = ExtResource("5_nr4sx")
@@ -127,5 +129,49 @@ script = ExtResource("8_s2c7o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBossRoom"]
 position = Vector2(9195, 311)
 shape = SubResource("RectangleShape2D_7782u")
+
+[node name="BlueBackground1" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+offset_left = -120.0
+offset_top = -216.0
+offset_right = 936.0
+offset_bottom = 312.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_vgqap")
+stretch_mode = 1
+
+[node name="GreenBackground2" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+offset_left = 1992.0
+offset_top = -216.0
+offset_right = 3096.0
+offset_bottom = 312.0
+scale = Vector2(2, 2)
+texture = ExtResource("10_x44kw")
+stretch_mode = 1
+
+[node name="BlueBackground3" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+offset_left = 4200.0
+offset_top = -216.0
+offset_right = 6648.0
+offset_bottom = 312.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_vgqap")
+stretch_mode = 1
+
+[node name="GreenBackground4" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+offset_left = 9096.0
+offset_top = -216.0
+offset_right = 9192.0
+offset_bottom = 312.0
+scale = Vector2(2, 2)
+texture = ExtResource("10_x44kw")
+stretch_mode = 1
 
 [connection signal="body_entered" from="LevelBossRoom" to="LevelBossRoom" method="_on_body_entered"]
