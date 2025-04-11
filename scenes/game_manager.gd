@@ -8,6 +8,8 @@ extends Node
 @onready var y_pos = player.position.y;
 #@onready var previous = 0;
 #@onready var frame_count = -1
+@onready var blackbox = get_node("../Canvas/blackbox")
+
 
 func _process(_delta):
 
@@ -81,9 +83,11 @@ func char_lose_hp():
 		if Global.hp <= 0:
 			var scene_name = get_tree().current_scene.scene_file_path
 			animation_player.play("fade_out")
-			animation_player.play("fade_in")
+			await animation_player.animation_finished # Wait for it to finish
+			blackbox.modulate.a = 1.0
 			Global.on_player_death(player, camera, scene_name)
-			
+			await get_tree().create_timer(1.0).timeout
+			animation_player.play("fade_in")
 
 
 func _on_damage_cooldown_timer_timeout() -> void:
