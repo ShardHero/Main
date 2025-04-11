@@ -53,7 +53,8 @@ func char_lose_hp():
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
-			main_char.queue_free()
+			var scene_name = get_tree().current_scene.scene_file_path
+			Global.on_player_death(player, camera, scene_name)
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
@@ -61,4 +62,3 @@ func _on_damage_cooldown_timer_timeout() -> void:
 func add_coin():
 	Global.coins += 1
 	Global.update_label()  
-	

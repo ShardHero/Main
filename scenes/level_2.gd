@@ -7,8 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	Global.set_var_label(var_label_node)
 	Global.update_label()
-	main_character.position = Vector2(-100,-200)
-	Global.adjust_camera(750, -50, -200, 9250, camera, player)
+	main_character.position = Vector2(0,0)
+	Global.adjust_camera(450, 100, -7900, 1050, camera, player)
