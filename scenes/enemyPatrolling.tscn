@@ -1,13 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://sjigmrytna27"]
+[gd_scene load_steps=9 format=3 uid="uid://d3phvui8fahvj"]
 
-[ext_resource type="Texture2D" uid="uid://cfvsksafbly8o" path="res://assets/art/concept_char_sprite.png" id="1_v7pvj"]
 [ext_resource type="Script" path="res://scenes/enemyPatrolling.gd" id="1_v8h2g"]
+[ext_resource type="Texture2D" uid="uid://088jgt5xi328" path="res://assets/art/patroller.png" id="2_wceqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfci6"]
+atlas = ExtResource("2_wceqa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0oy7"]
+atlas = ExtResource("2_wceqa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axh2p"]
+atlas = ExtResource("2_wceqa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwoge"]
+atlas = ExtResource("2_wceqa")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5axjp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_v7pvj")
+"texture": SubResource("AtlasTexture_kfci6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0oy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axh2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwoge")
 }],
 "loop": true,
 "name": &"default",
@@ -15,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6jod"]
-size = Vector2(38, 45.75)
+size = Vector2(58, 36)
 
 [node name="enemyPatrolling" type="CharacterBody2D"]
 script = ExtResource("1_v8h2g")
@@ -25,14 +50,18 @@ texture_filter = 1
 position = Vector2(2, -3)
 scale = Vector2(2.0625, 2.15625)
 sprite_frames = SubResource("SpriteFrames_5axjp")
+autoplay = "default"
+frame = 1
+frame_progress = 0.194609
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.125)
+position = Vector2(2, 11)
 shape = SubResource("RectangleShape2D_y6jod")
 
 [node name="FallingCheck" type="RayCast2D" parent="."]
-position = Vector2(18, 0)
+position = Vector2(32, 2)
 target_position = Vector2(0, 29)
 
 [node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(13, 0)
 target_position = Vector2(20, 0)

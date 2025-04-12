@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqsn4vwpdu435"
-path="res://.godot/imported/shardhero_main_char_idle.png-0c5b5d0e08821b4f993a37b3f5848929.ctex"
+uid="uid://b3h244oy1ifme"
+path="res://.godot/imported/DigitalTileset.png-ec484f96d63a236af4a319debc837723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/shardhero_main_char_idle.png"
-dest_files=["res://.godot/imported/shardhero_main_char_idle.png-0c5b5d0e08821b4f993a37b3f5848929.ctex"]
+source_file="res://assets/art/DigitalTileset.png"
+dest_files=["res://.godot/imported/DigitalTileset.png-ec484f96d63a236af4a319debc837723.ctex"]
 
 [params]
 
