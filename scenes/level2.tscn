@@ -1,6 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=14 format=3 uid="uid://djw0nlqqhve3u"]
 
+[ext_resource type="Texture2D" uid="uid://drg14gfs4on75" path="res://level_02_1.png" id="1_gh6kq"]
+[ext_resource type="Texture2D" uid="uid://he5ia5n2v74" path="res://crane.png" id="2_2uc5c"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
+[ext_resource type="Texture2D" uid="uid://bqroqt01c40h5" path="res://level_02_2.png" id="2_glxmb"]
+[ext_resource type="Texture2D" uid="uid://sjh6pkq6shpa" path="res://level_02_3.png" id="3_unju8"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
@@ -106,6 +110,93 @@ sources/2 = SubResource("TileSetAtlasSource_u6od4")
 
 [node name="Level2Base" type="Node2D"]
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="clouds" type="Sprite2D" parent="."]
+position = Vector2(-7520, 401)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level023" type="Sprite2D" parent="clouds"]
+position = Vector2(-7022.36, 320.875)
+scale = Vector2(1.4829, 1.4829)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level022" type="Sprite2D" parent="clouds"]
+position = Vector2(962.718, -75.5)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level026" type="Sprite2D" parent="clouds"]
+position = Vector2(2021, -93)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level024" type="Sprite2D" parent="clouds"]
+position = Vector2(4116, -89)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level025" type="Sprite2D" parent="clouds"]
+position = Vector2(3073, -78)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level024" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(1725.32, -13.1391)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level025" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(2583.47, -11.4967)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level026" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(3453.11, 45.9867)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level027" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(4229.14, 77.1921)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level027" type="Sprite2D" parent="clouds"]
+position = Vector2(5563, -172)
+scale = Vector2(2.10977, 1.40212)
+texture = ExtResource("2_glxmb")
+
+[node name="Level028" type="Sprite2D" parent="clouds"]
+position = Vector2(4265, -345)
+scale = Vector2(1.76092, 2.2)
+texture = ExtResource("3_unju8")
+
+[node name="Level025" type="Sprite2D" parent="."]
+position = Vector2(-917, 177)
+scale = Vector2(1.76092, 1.90645)
+texture = ExtResource("3_unju8")
+
+[node name="Level022" type="Sprite2D" parent="."]
+position = Vector2(242, 200)
+scale = Vector2(1.68161, 1.61935)
+texture = ExtResource("2_glxmb")
+
+[node name="Level023" type="Sprite2D" parent="."]
+position = Vector2(-4202, 156)
+scale = Vector2(2.47931, 1.9629)
+texture = ExtResource("2_glxmb")
+
+[node name="Level024" type="Sprite2D" parent="."]
+position = Vector2(-5961, 237)
+scale = Vector2(2.47931, 1.9629)
+texture = ExtResource("2_glxmb")
+
+[node name="Crane3" type="Sprite2D" parent="."]
+position = Vector2(142, 431)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Crane4" type="Sprite2D" parent="."]
+position = Vector2(-4193, 158)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
 [node name="MovingCamera" type="Camera2D" parent="."]
 position = Vector2(340, 420)
 zoom = Vector2(1.5, 1.5)
@@ -161,5 +252,20 @@ layer_0/tile_data = PackedInt32Array(851957, 589824, 0, 917493, 589824, 1, 98302
 
 [node name="Checkpoint" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(-3292, 72)
+
+[node name="Crane" type="Sprite2D" parent="."]
+position = Vector2(7688, 28)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Crane2" type="Sprite2D" parent="."]
+position = Vector2(7880, 668)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Level028" type="Sprite2D" parent="."]
+position = Vector2(4265, -345)
+scale = Vector2(1.76092, 2.2)
+texture = ExtResource("3_unju8")
 
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
