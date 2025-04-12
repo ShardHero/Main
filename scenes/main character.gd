@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -550.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var j_playing = false
+
 func _ready() -> void:
 	var scene_name = get_tree().current_scene.scene_file_path
 	print("scene_name:", scene_name)
@@ -23,10 +25,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if velocity.y >= 0:
 			velocity.y += (gravity * 1.2) * delta
-			# char_sprite_2d.play("j_down")
+			char_sprite_2d.play("j_down")
 		else:
 			velocity.y += gravity * delta
-			# char_sprite_2d.play("j_up")
+			char_sprite_2d.play("j_up")
+		j_playing = true
+	else:
+		j_playing = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -41,13 +46,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x == 0:
-		# char_sprite_2d.play("idle")
+		if not j_playing: char_sprite_2d.play("idle")
 		pass # here, we don't want to re-flip the sprite
 	else:
 		var isLeft = velocity.x < 0
 		char_sprite_2d.flip_h = isLeft
 		
-		# char_sprite_2d.play("run")
+		if not j_playing: char_sprite_2d.play("run")
 
 	move_and_slide()
 	for i in range(get_slide_collision_count()):

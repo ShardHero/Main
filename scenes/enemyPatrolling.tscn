@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://sjigmrytna27"]
+[gd_scene load_steps=9 format=3 uid="uid://d3phvui8fahvj"]
 
 [ext_resource type="Script" path="res://scenes/enemyPatrolling.gd" id="1_v8h2g"]
-[ext_resource type="Texture2D" uid="uid://2q3u3w0pcfva" path="res://assets/art/patroller.png" id="2_wceqa"]
+[ext_resource type="Texture2D" uid="uid://088jgt5xi328" path="res://assets/art/patroller.png" id="2_wceqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfci6"]
 atlas = ExtResource("2_wceqa")
