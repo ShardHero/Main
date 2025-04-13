@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cfu6qp58epi4y"]
+[gd_scene load_steps=35 format=3 uid="uid://cfu6qp58epi4y"]
 
 [ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="1_fgf55"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_pagok"]
@@ -11,17 +11,17 @@
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="5_8xsqu"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="5_15gxk"]
 [ext_resource type="Texture2D" uid="uid://bjpki384a1hp6" path="res://b_6.png" id="5_eiv2c"]
-[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemy_type_2.tscn" id="5_srd6q"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemyGuard.tscn" id="5_srd6q"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area.gd" id="5_thao0"]
 [ext_resource type="Texture2D" uid="uid://dcpnlek81hd80" path="res://4.png" id="6_nrd0e"]
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_xhcmi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_idqrs"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_ytou0"]
-[ext_resource type="PackedScene" uid="uid://bcmsxsvfydkux" path="res://scenes/projectile.tscn" id="13_sw2ry"]
-[ext_resource type="PackedScene" uid="uid://db0das6gpa0a8" path="res://scenes/projectile_shooter.tscn" id="14_5dipi"]
 [ext_resource type="Texture2D" uid="uid://me1tglxxetap" path="res://b_6.2.png" id="9_6dyj3"]
 [ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="9_ag2iv"]
+[ext_resource type="PackedScene" path="res://scenes/projectile.tscn" id="13_sw2ry"]
 [ext_resource type="Texture2D" uid="uid://d3uoqa0hv8m02" path="res://b_4.png" id="14_0vuyb"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_shooter.tscn" id="14_5dipi"]
 [ext_resource type="Texture2D" uid="uid://bfiikxvmn1nvd" path="res://b_5.png" id="14_cqetm"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area_2.gd" id="17_jr7fp"]
 [ext_resource type="Script" path="res://scenes/level_1_up_area_3.gd" id="17_smpp1"]
@@ -354,7 +354,7 @@ layer_0/tile_data = PackedInt32Array(786432, 131072, 5, 720896, 327680, 4, 0, 13
 unique_name_in_owner = true
 position = Vector2(2, -1)
 
-[node name="enemy" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
+[node name="enemyPatrolling_1" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
 position = Vector2(449, 457)
 
 [node name="GameManager" parent="." instance=ExtResource("5_15gxk")]
@@ -362,13 +362,13 @@ unique_name_in_owner = true
 
 [node name="Canvas" parent="." instance=ExtResource("6_xhcmi")]
 
-[node name="enemy2" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
+[node name="enemyPatrolling_2" parent="." groups=["enemies"] instance=ExtResource("3_ker7w")]
 position = Vector2(1140, 553)
 
-[node name="EnemyType2" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
+[node name="enemyGuard_1" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
 position = Vector2(2325, 454)
 
-[node name="EnemyType3" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
+[node name="enemyGuard_2" parent="." groups=["enemies"] instance=ExtResource("5_srd6q")]
 position = Vector2(3949, 234)
 facing_right = false
 

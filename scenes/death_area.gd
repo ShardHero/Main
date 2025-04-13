@@ -15,3 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 		Global.update_label()  # Refresh label
 		if Global.hp <= 0:
 			Global.on_player_death(player, camera, scene_name)
+	elif body.name.begins_with("enemy"):
+		body.queue_free()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://ch2lhx4dpevpr"]
+[gd_scene load_steps=36 format=3 uid="uid://ch2lhx4dpevpr"]
 
-[ext_resource type="Script" path="res://scenes/main character.gd" id="1_afw0k"]
+[ext_resource type="Script" path="res://scenes/main_character.gd" id="1_afw0k"]
+[ext_resource type="Texture2D" uid="uid://mm7x45y1n8dn" path="res://assets/art/mc_punch_sprite.png" id="2_agtao"]
 [ext_resource type="Texture2D" uid="uid://3egk77sgdy3u" path="res://assets/art/mc_idle_sprites.png" id="2_g3npd"]
 [ext_resource type="Texture2D" uid="uid://b5pghtfc6no1i" path="res://assets/art/shardhero_main_char_jdown.png" id="3_1xabj"]
 [ext_resource type="Texture2D" uid="uid://cytu5huns6sin" path="res://assets/art/shardhero_main_char_jup.png" id="4_oceju"]
@@ -169,8 +170,54 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2687"]
+atlas = ExtResource("2_agtao")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72y68"]
+atlas = ExtResource("2_agtao")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf0xw"]
+atlas = ExtResource("2_agtao")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs0vp"]
+atlas = ExtResource("2_agtao")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na7fl"]
+atlas = ExtResource("2_agtao")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_am4vv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2687")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72y68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf0xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs0vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na7fl")
+}],
+"loop": false,
+"name": &"punch",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntxl"]
 size = Vector2(38, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2e4u3"]
+radius = 30.0
 
 [node name="main character" type="CharacterBody2D"]
 script = ExtResource("1_afw0k")
@@ -183,6 +230,30 @@ sprite_frames = SubResource("SpriteFrames_hdbct")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="PunchSprite" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(10.1538, 2.15384)
+scale = Vector2(1.07692, 1.07692)
+sprite_frames = SubResource("SpriteFrames_am4vv")
+animation = &"punch"
+frame = 4
+frame_progress = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(165, 552.5)
 shape = SubResource("RectangleShape2D_gntxl")
+
+[node name="PunchTimer" type="Timer" parent="."]
+
+[node name="PunchArea" type="Area2D" parent="."]
+position = Vector2(-60, 0)
+
+[node name="PunchCollision" type="CollisionShape2D" parent="PunchArea"]
+position = Vector2(196, 531)
+shape = SubResource("CircleShape2D_2e4u3")
+disabled = true
+
+[connection signal="timeout" from="PunchTimer" to="." method="_on_punch_timer_timeout"]
+[connection signal="body_entered" from="PunchArea" to="." method="_on_punch_area_body_entered"]
