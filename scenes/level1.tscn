@@ -462,3 +462,6 @@ position = Vector2(5987, -21)
 [connection signal="body_entered" from="Level1Up_Area" to="Level1Up_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1Death_Area" to="Level1Death_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1Side_Area" to="Level1Side_Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1Death_Area2" to="Level1Death_Area2" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1Death_Area3" to="Level1Death_Area3" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1Death_Area4" to="Level1Death_Area4" method="_on_body_entered"]
