@@ -243,7 +243,6 @@ layer_0/tile_data = PackedInt32Array(851957, 589824, 0, 917493, 589824, 1, 98302
 [node name="Checkpoint" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(-3292, 72)
 
-<<<<<<< HEAD
 [node name="Crane" type="Sprite2D" parent="."]
 position = Vector2(7688, 28)
 scale = Vector2(1.92, 1.92)
@@ -260,7 +259,7 @@ scale = Vector2(1.76092, 2.2)
 texture = ExtResource("3_unju8")
 
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
-=======
+
 [node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(170, 554)
 
