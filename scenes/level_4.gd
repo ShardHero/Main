@@ -6,12 +6,16 @@ extends Node2D
 @onready var camera = get_node("MovingCamera")
 @onready var animation_player = %AnimationPlayer
 @onready var blackbox = $Canvas/blackbox
+@onready var boss_text_2: Label = $Canvas/boss_text_2
+@onready var animation_player_boss: AnimationPlayer = %AnimationPlayerBoss
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	blackbox.modulate.a = 1.0
+	boss_text_2.self_modulate = Color(1, 1, 1, 0)
+	animation_player_boss.play("text_2_appear")
 	call_deferred("_start_scene")
-
+	
 func _start_scene():
 	Global.set_var_label(var_label_node)
 	Global.update_label()
