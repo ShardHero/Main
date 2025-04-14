@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://doi770nyq1sex"]
+[gd_scene load_steps=28 format=3 uid="uid://doi770nyq1sex"]
 
 [ext_resource type="Script" path="res://scenes/level_3.gd" id="1_y0cej"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="3_idjk7"]
-[ext_resource type="PackedScene" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
+[ext_resource type="PackedScene" uid="uid://2w81npm6vlt5" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
 [ext_resource type="Texture2D" uid="uid://b3h244oy1ifme" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="6_gtj3c"]
+[ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
 [ext_resource type="Script" path="res://scenes/level_boss_room.gd" id="8_s2c7o"]
 [ext_resource type="Texture2D" uid="uid://dxwt1tlbdkwkp" path="res://assets/art/BackgroundPanelsBlue.png" id="9_vgqap"]
@@ -96,6 +96,58 @@ sources/1 = SubResource("TileSetAtlasSource_ad6x2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7782u"]
 size = Vector2(123, 147)
 
+[sub_resource type="Animation" id="Animation_ybvs6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_feyno"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dije"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
+_data = {
+"RESET": SubResource("Animation_ybvs6"),
+"fade_in": SubResource("Animation_feyno"),
+"fade_out": SubResource("Animation_1dije")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0et"]
 size = Vector2(672, 20)
 
@@ -153,6 +205,12 @@ script = ExtResource("8_s2c7o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBossRoom"]
 position = Vector2(9195, 311)
 shape = SubResource("RectangleShape2D_7782u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_hyb1j")
+}
 
 [node name="BlueBackground1" type="TextureRect" parent="."]
 z_index = -1

@@ -1,14 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=29 format=3 uid="uid://djw0nlqqhve3u"]
 
-[ext_resource type="Texture2D" uid="uid://drg14gfs4on75" path="res://level_02_1.png" id="1_gh6kq"]
-[ext_resource type="Texture2D" uid="uid://he5ia5n2v74" path="res://crane.png" id="2_2uc5c"]
-[ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
-[ext_resource type="Texture2D" uid="uid://bqroqt01c40h5" path="res://level_02_2.png" id="2_glxmb"]
-[ext_resource type="Texture2D" uid="uid://sjh6pkq6shpa" path="res://level_02_3.png" id="3_unju8"]
-[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
-[ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="1_77g56"]
+[ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
+[ext_resource type="Texture2D" uid="uid://dpqn8ixxu0g2d" path="res://level_02_1.png" id="1_gh6kq"]
+[ext_resource type="Texture2D" uid="uid://oaly5hesl6aw" path="res://crane.png" id="2_2uc5c"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
+[ext_resource type="Texture2D" uid="uid://1cgdjuiksc3p" path="res://level_02_2.png" id="2_glxmb"]
+[ext_resource type="Texture2D" uid="uid://cwhy67cmkc58f" path="res://level_02_3.png" id="3_unju8"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="5_at80x"]
@@ -115,6 +114,58 @@ texture = ExtResource("5_at80x")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tv3aj")
 sources/2 = SubResource("TileSetAtlasSource_u6od4")
+
+[sub_resource type="Animation" id="Animation_ybvs6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_feyno"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dije"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/blackbox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
+_data = {
+"RESET": SubResource("Animation_ybvs6"),
+"fade_in": SubResource("Animation_feyno"),
+"fade_out": SubResource("Animation_1dije")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
 size = Vector2(144, 20)
@@ -229,6 +280,14 @@ position_smoothing_enabled = true
 unique_name_in_owner = true
 position = Vector2(2, -1)
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_ci38a")
+
+[node name="DamageCooldownTimer" type="Timer" parent="GameManager"]
+unique_name_in_owner = true
+one_shot = true
+
 [node name="Global" parent="." instance=ExtResource("7_8crx6")]
 
 [node name="Collectables group" type="Node" parent="."]
@@ -242,6 +301,12 @@ layer_0/tile_data = PackedInt32Array(851957, 589824, 0, 917493, 589824, 1, 98302
 
 [node name="Checkpoint" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(-3292, 72)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_hyb1j")
+}
 
 [node name="Crane" type="Sprite2D" parent="."]
 position = Vector2(7688, 28)
@@ -257,8 +322,6 @@ texture = ExtResource("2_2uc5c")
 position = Vector2(4265, -345)
 scale = Vector2(1.76092, 2.2)
 texture = ExtResource("3_unju8")
-
-[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 
 [node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(170, 554)
@@ -276,7 +339,7 @@ script = ExtResource("8_dkrrh")
 position = Vector2(312, 626)
 shape = SubResource("RectangleShape2D_6ufgo")
 
-[node name="GameManager" parent="." instance=ExtResource("9_gfk5u")]
+[node name="GameManager2" parent="." instance=ExtResource("9_gfk5u")]
 unique_name_in_owner = true
 
 [node name="Level2Death_Area" type="Area2D" parent="."]
@@ -341,6 +404,7 @@ position = Vector2(-4405, 118)
 [node name="enemyPatrolling_const4" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
 position = Vector2(-6410, 117)
 
+[connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area" to="Level2Death_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area2" to="Level2Death_Area2" method="_on_body_entered"]

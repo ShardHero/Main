@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqytxnh1souxt"
-path="res://.godot/imported/2.png-3f238cfe6181f9f93f40cee36336f408.ctex"
+uid="uid://qt5xhxkuhva4"
+path="res://.godot/imported/little_white_squre_png.png-8e146b7e2742f2c03386f6530ad9b5ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2.png"
-dest_files=["res://.godot/imported/2.png-3f238cfe6181f9f93f40cee36336f408.ctex"]
+source_file="res://assets/art/little_white_squre_png.png"
+dest_files=["res://.godot/imported/little_white_squre_png.png-8e146b7e2742f2c03386f6530ad9b5ca.ctex"]
 
 [params]
 

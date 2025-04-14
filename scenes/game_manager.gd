@@ -1,13 +1,15 @@
 extends Node
 @onready var damage_timer = $DamageCooldownTimer  # Reference to the timer
 @onready var main_char = %"main_character"
+@onready var animation_player = %AnimationPlayer
 # VarLabel is autoloaded and global.
-
 @onready var player = get_node("../main_character")
 @onready var camera = get_node("../MovingCamera")
 @onready var y_pos = player.position.y;
 #@onready var previous = 0;
 #@onready var frame_count = -1
+@onready var blackbox = get_node("../Canvas/blackbox")
+
 
 func _process(_delta):
 
@@ -69,6 +71,7 @@ func _process(_delta):
 				camera.position.x = Global.camera_x_min
 
 
+
 var can_take_damage = true  # Prevent multiple damage hits
 
 func char_lose_hp(collider_name):
@@ -84,7 +87,13 @@ func char_lose_hp(collider_name):
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
 			var scene_name = get_tree().current_scene.scene_file_path
+			animation_player.play("fade_out")
+			await animation_player.animation_finished # Wait for it to finish
+			blackbox.modulate.a = 1.0
 			Global.on_player_death(player, camera, scene_name)
+			await get_tree().create_timer(1.0).timeout
+			animation_player.play("fade_in")
+
 
 func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
