@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var move_distance: float = 240  # Distance before reset
 
 @onready var sprite_2D = $Cannonball
+@onready var game_manager: Node = %GameManager
 
 var start_position: Vector2  # Store initial spawn position
 var traveled_distance: float = 0
@@ -27,9 +28,11 @@ func _physics_process(delta):
 
 	var movement = move_direction.normalized() * speed * delta
 	var collision = move_and_collide(movement)
+	if collision and collision.get_collider().name == "main_character":
+		game_manager.char_lose_hp(self.name)
 	if (collision and collision.get_collider().name == 'main_character') or traveled_distance >= move_distance:
 		despawn_projectile()  # Despawn on collision or max distance
-	else: 
+	else:
 		traveled_distance += movement.length()
 
 func despawn_projectile():

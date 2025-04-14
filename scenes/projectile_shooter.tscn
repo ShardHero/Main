@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://db0das6gpa0a8"]
+[gd_scene load_steps=11 format=3 uid="uid://db0das6gpa0a8"]
 
+[ext_resource type="Script" path="res://scenes/projectile_shooter.gd" id="1_83pr5"]
 [ext_resource type="Texture2D" uid="uid://ks6d1cxyutfr" path="res://assets/art/Cannon/Cannon Idle/1.png" id="1_l3o4d"]
 [ext_resource type="Texture2D" uid="uid://2yj2vjd05tl" path="res://assets/art/Cannon/Cannon Fire/1.png" id="2_sw10n"]
 [ext_resource type="Texture2D" uid="uid://w8c2a5hd4krg" path="res://assets/art/Cannon/Cannon Fire/2.png" id="3_onyap"]
@@ -46,12 +47,15 @@ animations = [{
 size = Vector2(58, 44)
 
 [node name="ProjectileShooter" type="CharacterBody2D"]
+script = ExtResource("1_83pr5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.0375, 1.94231)
 sprite_frames = SubResource("SpriteFrames_xcais")
 animation = &"shooting"
 autoplay = "shooting"
+frame = 2
+frame_progress = 0.665511
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

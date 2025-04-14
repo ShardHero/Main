@@ -7,6 +7,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "main_character":
+		body.can_move = false
+		
 		var scene_name = get_tree().current_scene.scene_file_path
 		animation_player.play("fade_out")
 		await animation_player.animation_finished # Wait for it to finish
@@ -23,5 +25,8 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.on_player_death(player, camera, scene_name)
 		await get_tree().create_timer(1).timeout
 		animation_player.play("fade_in")
+		
+		body.can_move = true
+		
 	elif body.name.begins_with("enemy"):
 		body.queue_free()

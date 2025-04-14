@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7r5uxtd4fltb"]
+[gd_scene load_steps=18 format=3 uid="uid://b7r5uxtd4fltb"]
 
 [ext_resource type="Script" path="res://scenes/toplevel_2.gd" id="1_qcyny"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="1_wnpkx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/level_1_down.gd" id="7_mr80k"]
 [ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemyGuard.tscn" id="8_vme8x"]
 [ext_resource type="PackedScene" uid="uid://dvkyit2lxralt" path="res://scenes/enemyPatrolling_const.tscn" id="9_1y8l8"]
+[ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="10_lqwv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b42ey"]
 texture = ExtResource("4_w3fy5")
@@ -207,7 +208,6 @@ shape = SubResource("RectangleShape2D_6jpnk")
 
 [node name="enemyGuard" parent="." groups=["enemies"] instance=ExtResource("8_vme8x")]
 position = Vector2(513, 548)
-facing_right = false
 
 [node name="enemyGuard2" parent="." groups=["enemies"] instance=ExtResource("8_vme8x")]
 position = Vector2(1155, 547)
@@ -218,6 +218,9 @@ position = Vector2(1664, 357)
 
 [node name="enemyPatrolling_const2" parent="." groups=["enemies"] instance=ExtResource("9_1y8l8")]
 position = Vector2(-346, 166)
+
+[node name="Checkpoint" parent="." instance=ExtResource("10_lqwv4")]
+position = Vector2(420, 554)
 
 [connection signal="body_entered" from="LevelDown_1" to="LevelDown_1" method="_on_body_entered"]
 [connection signal="body_entered" from="LevelDown_2" to="LevelDown_2" method="_on_body_entered"]

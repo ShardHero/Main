@@ -16,6 +16,7 @@ var punched_enemies = {}
 
 var anim_playing = false
 var can_punch = true
+var can_move = true
 
 func _ready() -> void:
 	var scene_name = get_tree().current_scene.scene_file_path
@@ -29,6 +30,9 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	# Add the gravity.
+	if not can_move:
+		return
+	
 	if Input.is_action_just_pressed("punch") and can_punch:
 		can_punch = false
 		punch_sprite.visible = true

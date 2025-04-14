@@ -76,7 +76,8 @@ var can_take_damage = true  # Prevent multiple damage hits
 
 func char_lose_hp(collider_name):
 	if can_take_damage:
-		if collider_name.begins_with("enemyPatrolling"):
+		animation_player.play("mc_hurt")
+		if collider_name.begins_with("enemyPatrolling") || collider_name.begins_with("Projectile"):
 			Global.hp -= 20
 		elif collider_name.begins_with("enemyGuard"):
 			Global.hp -= 25
@@ -86,6 +87,7 @@ func char_lose_hp(collider_name):
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer
 		if Global.hp <= 0:
+			main_char.can_move = false
 			var scene_name = get_tree().current_scene.scene_file_path
 			animation_player.play("fade_out")
 			await animation_player.animation_finished # Wait for it to finish
@@ -93,6 +95,7 @@ func char_lose_hp(collider_name):
 			Global.on_player_death(player, camera, scene_name)
 			await get_tree().create_timer(1.0).timeout
 			animation_player.play("fade_in")
+			main_char.can_move = true
 
 
 func _on_damage_cooldown_timer_timeout() -> void:
