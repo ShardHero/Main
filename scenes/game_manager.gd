@@ -71,9 +71,14 @@ func _process(_delta):
 
 var can_take_damage = true  # Prevent multiple damage hits
 
-func char_lose_hp():
+func char_lose_hp(collider_name):
 	if can_take_damage:
-		Global.hp -= 10
+		if collider_name.begins_with("enemyPatrolling"):
+			Global.hp -= 20
+		elif collider_name.begins_with("enemyGuard"):
+			Global.hp -= 25
+		else:
+			Global.hp -= 40
 		Global.update_label()  # Refresh label
 		can_take_damage = false  # Start cooldown to prevent more damage
 		damage_timer.start()  # Start cooldown timer

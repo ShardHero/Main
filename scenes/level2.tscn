@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=20 format=3 uid="uid://djw0nlqqhve3u"]
 
 [ext_resource type="Texture2D" uid="uid://drg14gfs4on75" path="res://level_02_1.png" id="1_gh6kq"]
 [ext_resource type="Texture2D" uid="uid://he5ia5n2v74" path="res://crane.png" id="2_2uc5c"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_8crx6"]
 [ext_resource type="Script" path="res://scenes/area_back_level1_top1.gd" id="8_dkrrh"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
+[ext_resource type="Script" path="res://scenes/death_area.gd" id="10_0r3he"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemyGuard.tscn" id="11_k7cd0"]
+[ext_resource type="PackedScene" uid="uid://dvkyit2lxralt" path="res://scenes/enemyPatrolling_const.tscn" id="12_uwwd1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3aj"]
 texture = ExtResource("4_ydwqi")
@@ -115,6 +118,15 @@ sources/2 = SubResource("TileSetAtlasSource_u6od4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
 size = Vector2(144, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpo7c"]
+size = Vector2(1159.5, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctxp"]
+size = Vector2(816.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i065a"]
+size = Vector2(4465.5, 20)
 
 [node name="Level2Base" type="Node2D"]
 script = ExtResource("1_bj6ep")
@@ -255,6 +267,9 @@ position = Vector2(170, 554)
 [node name="Checkpoint3" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(554, 552)
 
+[node name="Checkpoint4" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(-5795, 173)
+
 [node name="Level1Area" type="Area2D" parent="."]
 script = ExtResource("8_dkrrh")
 
@@ -265,5 +280,74 @@ shape = SubResource("RectangleShape2D_6ufgo")
 [node name="GameManager" parent="." instance=ExtResource("9_gfk5u")]
 unique_name_in_owner = true
 
+[node name="Level2Death_Area" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area"]
+position = Vector2(1191, 633)
+shape = SubResource("RectangleShape2D_cpo7c")
+
+[node name="Level2Death_Area2" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area2"]
+position = Vector2(-547, 633)
+shape = SubResource("RectangleShape2D_cpo7c")
+
+[node name="Level2Death_Area3" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area3"]
+position = Vector2(-1703, 581)
+shape = SubResource("RectangleShape2D_3ctxp")
+
+[node name="Level2Death_Area4" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area4"]
+position = Vector2(-2715, 630)
+shape = SubResource("RectangleShape2D_3ctxp")
+
+[node name="Level2Death_Area5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area5"]
+position = Vector2(-5591.75, 675)
+shape = SubResource("RectangleShape2D_i065a")
+
+[node name="enemyGuard" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-982, 498)
+
+[node name="enemyGuard2" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-5021, 547)
+
+[node name="enemyGuard5" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-6297, 454)
+
+[node name="enemyGuard3" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-7660, 548)
+
+[node name="enemyGuard4" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-2611, 307)
+facing_right = false
+
+[node name="enemyPatrolling_const" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-146, 452)
+
+[node name="enemyPatrolling_const2" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-2818, 165)
+
+[node name="enemyPatrolling_const3" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-4405, 118)
+
+[node name="enemyPatrolling_const4" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-6410, 117)
+
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
+<<<<<<< HEAD
 >>>>>>> 8772567d2aa50ea9486a7459f4479060426b9cfd
+=======
+[connection signal="body_entered" from="Level2Death_Area" to="Level2Death_Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area2" to="Level2Death_Area2" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area3" to="Level2Death_Area3" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area4" to="Level2Death_Area4" method="_on_body_entered"]
+>>>>>>> testing
