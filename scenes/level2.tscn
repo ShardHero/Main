@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=20 format=3 uid="uid://djw0nlqqhve3u"]
 
 [ext_resource type="PackedScene" uid="uid://bwwsr16jioppj" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://scenes/area_back_level1_top1.gd" id="8_dkrrh"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
 [ext_resource type="Script" path="res://scenes/death_area.gd" id="10_0r3he"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemyGuard.tscn" id="11_k7cd0"]
+[ext_resource type="PackedScene" uid="uid://dvkyit2lxralt" path="res://scenes/enemyPatrolling_const.tscn" id="12_uwwd1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3aj"]
 texture = ExtResource("4_ydwqi")
@@ -200,6 +202,34 @@ shape = SubResource("RectangleShape2D_3ctxp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area5"]
 position = Vector2(-5591.75, 675)
 shape = SubResource("RectangleShape2D_i065a")
+
+[node name="enemyGuard" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-982, 498)
+
+[node name="enemyGuard2" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-5021, 547)
+
+[node name="enemyGuard5" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-6297, 454)
+
+[node name="enemyGuard3" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-7660, 548)
+
+[node name="enemyGuard4" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-2611, 307)
+facing_right = false
+
+[node name="enemyPatrolling_const" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-146, 452)
+
+[node name="enemyPatrolling_const2" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-2818, 165)
+
+[node name="enemyPatrolling_const3" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-4405, 118)
+
+[node name="enemyPatrolling_const4" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-6410, 117)
 
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area" to="Level2Death_Area" method="_on_body_entered"]
