@@ -13,4 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		# Unpause before changing scene
 		get_tree().paused = false
-		get_tree().change_file_to_scene("boss_room_placeholder")
+		get_tree().change_scene_to_file("res://scenes/level_4.tscn")

@@ -17,7 +17,7 @@ func _start_scene():
 	Global.set_var_label(var_label_node)
 	Global.update_label()
 	var scene_name = get_tree().current_scene.scene_file_path
-	if Global.check_dict["res://scenes/level1.tscn"].x < 5600:
+	if Global.check_dict["res://scenes/level1.tscn"].x < 5550:
 		main_character.position = Vector2(-400,0)
 		Global.adjust_camera(405,-134, -5000, 400, camera, player)
 		await get_tree().create_timer(0.5).timeout

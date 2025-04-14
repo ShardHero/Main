@@ -23,3 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.on_player_death(player, camera, scene_name)
 		await get_tree().create_timer(1).timeout
 		animation_player.play("fade_in")
+	elif body.name.begins_with("enemy"):
+		body.queue_free()

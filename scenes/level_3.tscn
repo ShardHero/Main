@@ -1,15 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://doi770nyq1sex"]
+[gd_scene load_steps=28 format=3 uid="uid://doi770nyq1sex"]
 
 [ext_resource type="Script" path="res://scenes/level_3.gd" id="1_y0cej"]
-[ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
+[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="2_gpvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="3_idjk7"]
 [ext_resource type="PackedScene" uid="uid://2w81npm6vlt5" path="res://scenes/moving_camera.tscn" id="4_we4p0"]
 [ext_resource type="Texture2D" uid="uid://b3h244oy1ifme" path="res://assets/art/DigitalTileset.png" id="5_nr4sx"]
 [ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="6_gtj3c"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="7_bnmbm"]
 [ext_resource type="Script" path="res://scenes/level_boss_room.gd" id="8_s2c7o"]
-[ext_resource type="Texture2D" uid="uid://cu5x7e517n1cq" path="res://assets/art/BackgroundPanelsBlue.png" id="9_vgqap"]
-[ext_resource type="Texture2D" uid="uid://53ihyy2hnsj3" path="res://assets/art/BackgroundPanelsGreen.png" id="10_x44kw"]
+[ext_resource type="Texture2D" uid="uid://dxwt1tlbdkwkp" path="res://assets/art/BackgroundPanelsBlue.png" id="9_vgqap"]
+[ext_resource type="Texture2D" uid="uid://cija8mmnsflah" path="res://assets/art/BackgroundPanelsGreen.png" id="10_x44kw"]
+[ext_resource type="Script" path="res://scenes/death_area.gd" id="11_ddl1c"]
+[ext_resource type="PackedScene" uid="uid://clghjswcu0lj4" path="res://scenes/enemyPatrolling_neon.tscn" id="12_j5fhh"]
+[ext_resource type="PackedScene" uid="uid://3wijtrbckw87" path="res://scenes/enemyGuard_neon.tscn" id="13_kutv7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad6x2"]
 texture = ExtResource("5_nr4sx")
@@ -145,6 +148,27 @@ _data = {
 "fade_out": SubResource("Animation_1dije")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0et"]
+size = Vector2(672, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0s3x"]
+size = Vector2(432, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgbcq"]
+size = Vector2(197.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfd2r"]
+size = Vector2(101.75, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3qld"]
+size = Vector2(437.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw6ru"]
+size = Vector2(1782, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb3jw"]
+size = Vector2(246.25, 20)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_y0cej")
 
@@ -232,4 +256,154 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_x44kw")
 stretch_mode = 1
 
+[node name="Level3Death_Area" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area"]
+position = Vector2(720, 774)
+shape = SubResource("RectangleShape2D_rm0et")
+
+[node name="Level3Death_Area2" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area2"]
+position = Vector2(1464, 583)
+shape = SubResource("RectangleShape2D_i0s3x")
+
+[node name="Level3Death_Area3" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area3"]
+position = Vector2(3456, 679)
+shape = SubResource("RectangleShape2D_hgbcq")
+
+[node name="Level3Death_Area6" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area6"]
+position = Vector2(7152, 630)
+shape = SubResource("RectangleShape2D_hgbcq")
+
+[node name="Level3Death_Area12" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area12"]
+position = Vector2(6384, 727)
+shape = SubResource("RectangleShape2D_hgbcq")
+
+[node name="Level3Death_Area4" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area4"]
+position = Vector2(1824, 140)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area7" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area7"]
+position = Vector2(1923, 485)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area8" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area8"]
+position = Vector2(2208, 389)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area9" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area9"]
+position = Vector2(2352, 437)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area10" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area10"]
+position = Vector2(2496, 485)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area11" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area11"]
+position = Vector2(2832, 485)
+shape = SubResource("RectangleShape2D_kfd2r")
+
+[node name="Level3Death_Area5" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area5"]
+position = Vector2(3912.25, 684)
+shape = SubResource("RectangleShape2D_g3qld")
+
+[node name="Level3Death_Area13" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area13"]
+position = Vector2(5160, 727)
+shape = SubResource("RectangleShape2D_fw6ru")
+
+[node name="Level3Death_Area14" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area14"]
+position = Vector2(8232, 631)
+shape = SubResource("RectangleShape2D_fw6ru")
+
+[node name="Level3Death_Area15" type="Area2D" parent="."]
+script = ExtResource("11_ddl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Death_Area15"]
+position = Vector2(6695.88, 630)
+shape = SubResource("RectangleShape2D_sb3jw")
+
+[node name="enemyPatrolling" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
+position = Vector2(551, 599)
+
+[node name="enemyPatrolling2" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
+position = Vector2(2647, 406)
+
+[node name="enemyPatrolling3" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
+position = Vector2(6120, 645)
+
+[node name="enemyPatrolling4" parent="." groups=["scenes"] instance=ExtResource("12_j5fhh")]
+position = Vector2(6753, 405)
+
+[node name="enemyPatrolling5" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
+position = Vector2(8180, 214)
+
+[node name="enemyGuard" parent="." groups=["enemies"] instance=ExtResource("13_kutv7")]
+position = Vector2(885, 505)
+facing_right = false
+
+[node name="enemyGuard2" parent="." groups=["enemies"] instance=ExtResource("13_kutv7")]
+position = Vector2(1608, 412)
+facing_right = false
+
+[node name="enemyGuard4" parent="." groups=["enemies"] instance=ExtResource("13_kutv7")]
+position = Vector2(8474, 457)
+facing_right = false
+
+[node name="enemyGuard3" parent="." groups=["enemies"] instance=ExtResource("13_kutv7")]
+position = Vector2(4486, 601)
+
 [connection signal="body_entered" from="LevelBossRoom" to="LevelBossRoom" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area" to="Level3Death_Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area2" to="Level3Death_Area2" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area3" to="Level3Death_Area3" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area6" to="Level3Death_Area6" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area12" to="Level3Death_Area12" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area4" to="Level3Death_Area4" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area7" to="Level3Death_Area7" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area8" to="Level3Death_Area8" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area9" to="Level3Death_Area9" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area10" to="Level3Death_Area10" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area11" to="Level3Death_Area11" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area5" to="Level3Death_Area5" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area13" to="Level3Death_Area13" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area14" to="Level3Death_Area14" method="_on_body_entered"]
+[connection signal="body_entered" from="Level3Death_Area15" to="Level3Death_Area15" method="_on_body_entered"]

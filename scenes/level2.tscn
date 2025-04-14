@@ -1,15 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=29 format=3 uid="uid://djw0nlqqhve3u"]
 
 [ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
+[ext_resource type="Texture2D" uid="uid://dpqn8ixxu0g2d" path="res://level_02_1.png" id="1_gh6kq"]
+[ext_resource type="Texture2D" uid="uid://oaly5hesl6aw" path="res://crane.png" id="2_2uc5c"]
 [ext_resource type="PackedScene" uid="uid://ch2lhx4dpevpr" path="res://scenes/main_character.tscn" id="2_12mcp"]
+[ext_resource type="Texture2D" uid="uid://1cgdjuiksc3p" path="res://level_02_2.png" id="2_glxmb"]
+[ext_resource type="Texture2D" uid="uid://cwhy67cmkc58f" path="res://level_02_3.png" id="3_unju8"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_ci38a"]
 [ext_resource type="Texture2D" uid="uid://baviub1p1h5tg" path="res://assets/art/ConstructionTileset.png" id="4_ydwqi"]
 [ext_resource type="PackedScene" uid="uid://daeoooqxrqa3h" path="res://scenes/checkpoint.tscn" id="5_6beai"]
 [ext_resource type="Texture2D" uid="uid://be6smq1lv47ux" path="res://assets/art/placeholder_tilemap.png" id="5_at80x"]
 [ext_resource type="PackedScene" uid="uid://c25ti6th3m4d1" path="res://scenes/global.tscn" id="7_8crx6"]
 [ext_resource type="Script" path="res://scenes/area_back_level1_top1.gd" id="8_dkrrh"]
-[ext_resource type="PackedScene" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
+[ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="9_gfk5u"]
+[ext_resource type="Script" path="res://scenes/death_area.gd" id="10_0r3he"]
+[ext_resource type="PackedScene" uid="uid://dtxmnky7jdx6f" path="res://scenes/enemyGuard.tscn" id="11_k7cd0"]
+[ext_resource type="PackedScene" uid="uid://dvkyit2lxralt" path="res://scenes/enemyPatrolling_const.tscn" id="12_uwwd1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3aj"]
 texture = ExtResource("4_ydwqi")
@@ -163,10 +170,106 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
 size = Vector2(144, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpo7c"]
+size = Vector2(1159.5, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctxp"]
+size = Vector2(816.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i065a"]
+size = Vector2(4465.5, 20)
+
 [node name="Level2Base" type="Node2D"]
 script = ExtResource("1_bj6ep")
 
 [node name="Canvas" parent="." instance=ExtResource("1_77g56")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="clouds" type="Sprite2D" parent="."]
+position = Vector2(-7520, 401)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level023" type="Sprite2D" parent="clouds"]
+position = Vector2(-7022.36, 320.875)
+scale = Vector2(1.4829, 1.4829)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level022" type="Sprite2D" parent="clouds"]
+position = Vector2(962.718, -75.5)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level026" type="Sprite2D" parent="clouds"]
+position = Vector2(2021, -93)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level024" type="Sprite2D" parent="clouds"]
+position = Vector2(4116, -89)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level025" type="Sprite2D" parent="clouds"]
+position = Vector2(3073, -78)
+scale = Vector2(1.21774, 1.21774)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level024" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(1725.32, -13.1391)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level025" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(2583.47, -11.4967)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level026" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(3453.11, 45.9867)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level027" type="Sprite2D" parent="clouds/Level025"]
+position = Vector2(4229.14, 77.1921)
+texture = ExtResource("1_gh6kq")
+
+[node name="Level027" type="Sprite2D" parent="clouds"]
+position = Vector2(5563, -172)
+scale = Vector2(2.10977, 1.40212)
+texture = ExtResource("2_glxmb")
+
+[node name="Level028" type="Sprite2D" parent="clouds"]
+position = Vector2(4265, -345)
+scale = Vector2(1.76092, 2.2)
+texture = ExtResource("3_unju8")
+
+[node name="Level025" type="Sprite2D" parent="."]
+position = Vector2(-917, 177)
+scale = Vector2(1.76092, 1.90645)
+texture = ExtResource("3_unju8")
+
+[node name="Level022" type="Sprite2D" parent="."]
+position = Vector2(242, 200)
+scale = Vector2(1.68161, 1.61935)
+texture = ExtResource("2_glxmb")
+
+[node name="Level023" type="Sprite2D" parent="."]
+position = Vector2(-4202, 156)
+scale = Vector2(2.47931, 1.9629)
+texture = ExtResource("2_glxmb")
+
+[node name="Level024" type="Sprite2D" parent="."]
+position = Vector2(-5961, 237)
+scale = Vector2(2.47931, 1.9629)
+texture = ExtResource("2_glxmb")
+
+[node name="Crane3" type="Sprite2D" parent="."]
+position = Vector2(142, 431)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Crane4" type="Sprite2D" parent="."]
+position = Vector2(-4193, 158)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
 
 [node name="MovingCamera" type="Camera2D" parent="."]
 position = Vector2(340, 420)
@@ -205,11 +308,29 @@ libraries = {
 "": SubResource("AnimationLibrary_hyb1j")
 }
 
+[node name="Crane" type="Sprite2D" parent="."]
+position = Vector2(7688, 28)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Crane2" type="Sprite2D" parent="."]
+position = Vector2(7880, 668)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_2uc5c")
+
+[node name="Level028" type="Sprite2D" parent="."]
+position = Vector2(4265, -345)
+scale = Vector2(1.76092, 2.2)
+texture = ExtResource("3_unju8")
+
 [node name="Checkpoint2" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(170, 554)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("5_6beai")]
 position = Vector2(554, 552)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("5_6beai")]
+position = Vector2(-5795, 173)
 
 [node name="Level1Area" type="Area2D" parent="."]
 script = ExtResource("8_dkrrh")
@@ -221,5 +342,71 @@ shape = SubResource("RectangleShape2D_6ufgo")
 [node name="GameManager2" parent="." instance=ExtResource("9_gfk5u")]
 unique_name_in_owner = true
 
+[node name="Level2Death_Area" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area"]
+position = Vector2(1191, 633)
+shape = SubResource("RectangleShape2D_cpo7c")
+
+[node name="Level2Death_Area2" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area2"]
+position = Vector2(-547, 633)
+shape = SubResource("RectangleShape2D_cpo7c")
+
+[node name="Level2Death_Area3" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area3"]
+position = Vector2(-1703, 581)
+shape = SubResource("RectangleShape2D_3ctxp")
+
+[node name="Level2Death_Area4" type="Area2D" parent="."]
+script = ExtResource("10_0r3he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area4"]
+position = Vector2(-2715, 630)
+shape = SubResource("RectangleShape2D_3ctxp")
+
+[node name="Level2Death_Area5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Death_Area5"]
+position = Vector2(-5591.75, 675)
+shape = SubResource("RectangleShape2D_i065a")
+
+[node name="enemyGuard" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-982, 498)
+
+[node name="enemyGuard2" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-5021, 547)
+
+[node name="enemyGuard5" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-6297, 454)
+
+[node name="enemyGuard3" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-7660, 548)
+
+[node name="enemyGuard4" parent="." groups=["enemies"] instance=ExtResource("11_k7cd0")]
+position = Vector2(-2611, 307)
+facing_right = false
+
+[node name="enemyPatrolling_const" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-146, 452)
+
+[node name="enemyPatrolling_const2" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-2818, 165)
+
+[node name="enemyPatrolling_const3" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-4405, 118)
+
+[node name="enemyPatrolling_const4" parent="." groups=["enemies"] instance=ExtResource("12_uwwd1")]
+position = Vector2(-6410, 117)
+
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area" to="Level2Death_Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area2" to="Level2Death_Area2" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area3" to="Level2Death_Area3" method="_on_body_entered"]
+[connection signal="body_entered" from="Level2Death_Area4" to="Level2Death_Area4" method="_on_body_entered"]
