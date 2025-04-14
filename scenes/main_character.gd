@@ -81,7 +81,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider and collider.is_in_group("enemies"):
-			game_manager.char_lose_hp()
+			game_manager.char_lose_hp(collider.name)
 			print("Player collided with an enemy!")
 			# Example: Implement knockback, health reduction, or other effects here
 

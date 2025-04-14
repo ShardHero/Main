@@ -248,7 +248,6 @@ shape = SubResource("RectangleShape2D_gntxl")
 [node name="PunchTimer" type="Timer" parent="."]
 
 [node name="PunchArea" type="Area2D" parent="."]
-position = Vector2(-60, 0)
 
 [node name="PunchCollision" type="CollisionShape2D" parent="PunchArea"]
 position = Vector2(196, 531)
