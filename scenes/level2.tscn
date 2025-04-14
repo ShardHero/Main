@@ -343,11 +343,7 @@ position = Vector2(-4405, 118)
 position = Vector2(-6410, 117)
 
 [connection signal="body_entered" from="Level1Area" to="Level1Area" method="_on_body_entered"]
-<<<<<<< HEAD
->>>>>>> 8772567d2aa50ea9486a7459f4479060426b9cfd
-=======
 [connection signal="body_entered" from="Level2Death_Area" to="Level2Death_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area2" to="Level2Death_Area2" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area3" to="Level2Death_Area3" method="_on_body_entered"]
 [connection signal="body_entered" from="Level2Death_Area4" to="Level2Death_Area4" method="_on_body_entered"]
->>>>>>> testing
