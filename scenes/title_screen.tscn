@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1mmhncol26h7"]
 
 [ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_en0v4"]
-[ext_resource type="Texture2D" uid="uid://brkd2qiag6wcn" path="res://assets/art/concept_title_draft.png" id="1_hh0x7"]
+[ext_resource type="Texture2D" uid="uid://b5bvtjfw827no" path="res://assets/art/shardhero_logo_final.png" id="2_4pq13"]
 [ext_resource type="Texture2D" uid="uid://qt5xhxkuhva4" path="res://assets/art/little_white_squre_png.png" id="3_b7dxm"]
 
 [sub_resource type="Animation" id="Animation_fw70k"]
@@ -66,7 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_hh0x7")
+texture = ExtResource("2_4pq13")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 7

@@ -77,7 +77,7 @@ var can_take_damage = true  # Prevent multiple damage hits
 func char_lose_hp(collider_name):
 	if can_take_damage:
 		animation_player.play("mc_hurt")
-		if collider_name.begins_with("enemyPatrolling") || collider_name.begins_with("Projectile"):
+		if collider_name.begins_with("enemyPatrolling") || collider_name.begins_with("Projectile") || collider_name.begins_with("enemyBoss"):
 			Global.hp -= 20
 		elif collider_name.begins_with("enemyGuard"):
 			Global.hp -= 25
@@ -102,5 +102,5 @@ func _on_damage_cooldown_timer_timeout() -> void:
 	can_take_damage = true
 
 func add_coin():
-	Global.coins += 1
+	Global.coins += 3
 	Global.update_label()  

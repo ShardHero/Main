@@ -80,6 +80,8 @@ func on_punched(knockback_direction: int):
 		hp -= 25
 		print("Enemy punched, HP:", hp)
 		if hp <= 0:
+			Global.coins += 2
+			Global.update_label()
 			queue_free()
 
 		is_knocked_back = true

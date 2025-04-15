@@ -18,8 +18,6 @@ func _physics_process(delta: float) -> void:
 		if knockback_timer <= 0:
 			is_knocked_back = false
 			velocity.x = 0  # Stop any knockback force after timer ends
-			velocity.x += speed  # Restore normal speed
-
 	# Apply gravity if the character is not on the floor
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -49,7 +47,10 @@ func on_punched(knockback_direction: int):
 		hp -= 33
 		print("Enemy punched, HP:", hp)
 		if hp <= 0:
+			Global.coins += 1
 			queue_free()
+			Global.update_label()
+			
 
 		is_knocked_back = true
 		knockback_timer = knockback_duration

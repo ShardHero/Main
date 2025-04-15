@@ -11,6 +11,8 @@ extends Node
 func _ready():
 	blackbox.modulate.a = 1.0
 	call_deferred("_start_scene")
+	Global.hp = 100
+	Global.coins = 0
 	
 func _start_scene():
 	#Floor, Ceiling, Xmin, Xmax

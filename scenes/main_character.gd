@@ -86,7 +86,6 @@ func _physics_process(delta):
 		var collider = collision.get_collider()
 		if collider and collider.is_in_group("enemies"):
 			game_manager.char_lose_hp(collider.name)
-			print("Player collided with an enemy!")
 			# Example: Implement knockback, health reduction, or other effects here
 
 func _on_punch_timer_timeout() -> void:
@@ -100,9 +99,12 @@ func _on_punch_timer_timeout() -> void:
 func _on_punch_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		if body.name not in punched_enemies and not punch_collision.disabled:
-			print("Punch collided with enemy:", body.name)
 			punched_enemies[body.name] = true
 			var left = -1 if velocity.x < 0 else 1
 			body.on_punched(left)
-		else:
-			print("Punch ignored: already punched or collision disabled.")
+
+func apply_knockback(force: Vector2) -> void:
+	can_move = false
+	velocity = force
+	await get_tree().create_timer(0.8).timeout
+	can_move = true

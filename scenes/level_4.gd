@@ -7,7 +7,7 @@ extends Node2D
 @onready var animation_player = %AnimationPlayer
 @onready var blackbox = $Canvas/blackbox
 @onready var boss_text_2: Label = $Canvas/boss_text_2
-@onready var animation_player_boss: AnimationPlayer = %AnimationPlayerBoss
+@onready var animation_player_boss: AnimationPlayer = %AnimationPlayerBossText
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
