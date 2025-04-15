@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -550.0
 @onready var punch_sprite: AnimatedSprite2D = $AnimatedSprite2D/PunchSprite
 @onready var punch_area: Area2D = $PunchArea
 @onready var punch_collision: CollisionShape2D = $PunchArea/PunchCollision
+@onready var body_hitbox: Area2D = $BodyHitbox
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -81,12 +82,6 @@ func _physics_process(delta):
 		if not anim_playing: char_sprite_2d.play("run")
 
 	move_and_slide()
-	for i in range(get_slide_collision_count()):
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if collider and collider.is_in_group("enemies"):
-			game_manager.char_lose_hp(collider.name)
-			# Example: Implement knockback, health reduction, or other effects here
 
 func _on_punch_timer_timeout() -> void:
 	can_punch = true
@@ -108,3 +103,8 @@ func apply_knockback(force: Vector2) -> void:
 	velocity = force
 	await get_tree().create_timer(0.8).timeout
 	can_move = true
+
+
+func _on_body_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		game_manager.char_lose_hp(body.name)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ch2lhx4dpevpr"]
+[gd_scene load_steps=37 format=3 uid="uid://ch2lhx4dpevpr"]
 
 [ext_resource type="Script" path="res://scenes/main_character.gd" id="1_afw0k"]
 [ext_resource type="Texture2D" uid="uid://mm7x45y1n8dn" path="res://assets/art/mc_punch_sprite.png" id="2_agtao"]
@@ -219,6 +219,9 @@ size = Vector2(38, 45)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2e4u3"]
 radius = 30.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4sq8"]
+size = Vector2(44, 45)
+
 [node name="main character" type="CharacterBody2D"]
 script = ExtResource("1_afw0k")
 
@@ -254,5 +257,12 @@ position = Vector2(196, 531)
 shape = SubResource("CircleShape2D_2e4u3")
 disabled = true
 
+[node name="BodyHitbox" type="Area2D" parent="."]
+
+[node name="BodyCollision" type="CollisionShape2D" parent="BodyHitbox"]
+position = Vector2(165, 553)
+shape = SubResource("RectangleShape2D_u4sq8")
+
 [connection signal="timeout" from="PunchTimer" to="." method="_on_punch_timer_timeout"]
 [connection signal="body_entered" from="PunchArea" to="." method="_on_punch_area_body_entered"]
+[connection signal="body_entered" from="BodyHitbox" to="." method="_on_body_hitbox_body_entered"]

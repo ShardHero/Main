@@ -16,6 +16,8 @@ var punch_cooldown := 1.0
 var punch_timer := 0.0
 var charge_continues := false  # New variable to continue charging after losing vision
 @onready var game_manager: Node = %GameManager
+@onready var animation_player_boss_text: AnimationPlayer = %AnimationPlayerBossText
+@onready var boss_text: Label = $"../Canvas/boss_text"
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
@@ -108,7 +110,9 @@ func on_punched(knockback_direction: int) -> void:
 	$AnimatedSprite2D.play("idle")
 
 func _on_start_area_body_entered(body: Node2D) -> void:
-	if body.name == "main_character":
+	if body.name == "main_character" and not fight_started:
+		boss_text.visible = true
+		animation_player_boss_text.play("text_appear")
 		fight_started = true
 		speed = patrol_speed
 		$AnimatedSprite2D.play("run")
