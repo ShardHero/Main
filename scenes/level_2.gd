@@ -16,6 +16,6 @@ func _start_scene():
 	Global.set_var_label(var_label_node)
 	Global.update_label()
 	main_character.position = Vector2(0,0)
-	Global.adjust_camera(450, 100, -7900, 1050, camera, player)
+	Global.adjust_camera(550, 100, -7900, 1050, camera, player)
 	await get_tree().create_timer(0.5).timeout
 	animation_player.play("fade_in")

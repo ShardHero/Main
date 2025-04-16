@@ -16,6 +16,8 @@ var initial = 0
 
 var check_dict = {}
 
+var boss_spawn_position = Vector2(4183, 420)
+
 # flag denoting if player should spawn from diff position other than default pos stated in level*.gd
 var spawn_flag = false
 
@@ -96,9 +98,12 @@ func on_player_death(body, camera, scene_name): # assuming body is main_char AND
 		body.position = check_dict[scene_name]
 	camera.position.y = body.position.y - 100
 	camera.position.x = body.position.x + 150
-	Global.coins = max(Global.coins - 10, 0)
+	Global.coins = max(Global.coins - 5, 0)
 	Global.hp = 100
 	Global.update_label()
+	if get_tree().current_scene.scene_file_path.ends_with("level_4.tscn"):
+		await get_tree().create_timer(1.5).timeout
+		get_tree().reload_current_scene()
 
 func update_latest_checkpoint(scene_name, checkpoint):
 	check_dict[scene_name] = checkpoint.global_position

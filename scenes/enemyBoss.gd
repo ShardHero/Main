@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var patrol_speed := 100.0
-@export var charge_speed := 300.0
+@export var charge_speed := 250.0
 @export var knockback_force := Vector2(50, -100)
 @export var knockback_duration := 0.5
 @export var hp := 300
@@ -76,10 +76,11 @@ func _physics_process(delta: float) -> void:
 				punch_timer = punch_cooldown
 
 		# Animations
-		elif abs(velocity.x) > 0:
-			$AnimatedSprite2D.play("run")
-		else:
-			$AnimatedSprite2D.play("idle")
+		if $AnimatedSprite2D.animation != "punch" or !$AnimatedSprite2D.is_playing():
+			if abs(velocity.x) > 0:
+				$AnimatedSprite2D.play("run")
+			else:
+				$AnimatedSprite2D.play("idle")
 
 	move_and_slide()
 
@@ -101,13 +102,15 @@ func on_punched(knockback_direction: int) -> void:
 		queue_free()
 
 	if not $Vision.is_colliding():
+		await get_tree().create_timer(0.2).timeout
 		flip()
 
 	is_knocked_back = true
 	knockback_timer = knockback_duration
 	velocity.x = knockback_force.x * knockback_direction
 	velocity.y = knockback_force.y
-	$AnimatedSprite2D.play("idle")
+	if $AnimatedSprite2D.animation != "punch":
+		$AnimatedSprite2D.play("idle")
 
 func _on_start_area_body_entered(body: Node2D) -> void:
 	if body.name == "main_character" and not fight_started:

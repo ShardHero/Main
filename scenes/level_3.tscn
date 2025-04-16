@@ -223,10 +223,10 @@ layer_0/tile_data = PackedInt32Array(786439, 524289, 0, 786438, 458753, 0, 78643
 position = Vector2(4200, 408)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("7_bnmbm")]
-position = Vector2(2124, 267)
+position = Vector2(2080, 267)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("7_bnmbm")]
-position = Vector2(6199, 645)
+position = Vector2(6160, 651)
 
 [node name="GameManager" parent="." instance=ExtResource("2_gpvj2")]
 unique_name_in_owner = true
@@ -252,10 +252,10 @@ stretch_mode = 1
 [node name="GreenBackground2" type="TextureRect" parent="."]
 z_index = -1
 texture_filter = 1
-offset_left = 1992.0
-offset_top = -374.0
-offset_right = 3096.0
-offset_bottom = 393.0
+offset_left = 1993.0
+offset_top = -379.0
+offset_right = 3097.0
+offset_bottom = 388.0
 scale = Vector2(2, 2)
 texture = ExtResource("10_x44kw")
 stretch_mode = 1
@@ -263,10 +263,10 @@ stretch_mode = 1
 [node name="BlueBackground3" type="TextureRect" parent="."]
 z_index = -1
 texture_filter = 1
-offset_left = 4200.0
-offset_top = -380.0
-offset_right = 6648.0
-offset_bottom = 392.0
+offset_left = 4203.0
+offset_top = -376.0
+offset_right = 6651.0
+offset_bottom = 396.0
 scale = Vector2(2, 2)
 texture = ExtResource("9_vgqap")
 stretch_mode = 1
@@ -396,8 +396,8 @@ position = Vector2(2647, 406)
 [node name="enemyPatrolling3" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
 position = Vector2(6120, 645)
 
-[node name="enemyPatrolling4" parent="." groups=["scenes"] instance=ExtResource("12_j5fhh")]
-position = Vector2(6753, 405)
+[node name="enemyPatrolling4" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
+position = Vector2(6691, 402)
 
 [node name="enemyPatrolling5" parent="." groups=["enemies"] instance=ExtResource("12_j5fhh")]
 position = Vector2(8180, 214)

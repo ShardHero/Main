@@ -24,6 +24,6 @@ func _start_scene():
 		animation_player.play("fade_in")
 	else:
 		main_character.position = Vector2(200,0)
-		Global.adjust_camera(405, -134, 390, 6116, camera, player)
+		Global.adjust_camera(405, -134, 390, 1550, camera, player)
 		await get_tree().create_timer(0.5).timeout
 		animation_player.play("fade_in")

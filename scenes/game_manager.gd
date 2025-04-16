@@ -15,7 +15,7 @@ func _process(_delta):
 
 	if player.position.y < 2 and player.position.y > -1 and not Global.looking_up:
 		camera.position.y = Global.camera_floor
-		
+	
 	if camera.position.y > Global.camera_floor:
 		camera.position.y = Global.camera_floor - 1
 
@@ -93,8 +93,9 @@ func char_lose_hp(collider_name):
 			await animation_player.animation_finished # Wait for it to finish
 			blackbox.modulate.a = 1.0
 			Global.on_player_death(player, camera, scene_name)
-			await get_tree().create_timer(1.0).timeout
-			animation_player.play("fade_in")
+			if not get_tree().current_scene.scene_file_path.ends_with("level_4.tscn"):
+				await get_tree().create_timer(1.0).timeout
+				animation_player.play("fade_in")
 			main_char.can_move = true
 
 

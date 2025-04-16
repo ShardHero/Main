@@ -95,7 +95,7 @@ func _on_punch_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		if body.name not in punched_enemies and not punch_collision.disabled:
 			punched_enemies[body.name] = true
-			var left = -1 if velocity.x < 0 else 1
+			var left = -1 if char_sprite_2d.flip_h else 1
 			body.on_punched(left)
 
 func apply_knockback(force: Vector2) -> void:
