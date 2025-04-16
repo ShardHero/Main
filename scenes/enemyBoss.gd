@@ -102,7 +102,7 @@ func on_punched(knockback_direction: int) -> void:
 		queue_free()
 
 	if not $Vision.is_colliding():
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.4).timeout
 		flip()
 
 	is_knocked_back = true

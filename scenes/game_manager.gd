@@ -9,6 +9,7 @@ extends Node
 #@onready var previous = 0;
 #@onready var frame_count = -1
 @onready var blackbox = get_node("../Canvas/blackbox")
+@onready var mc_anim_player: AnimationPlayer = %MCAnimPlayer
 
 
 func _process(_delta):
@@ -76,7 +77,7 @@ var can_take_damage = true  # Prevent multiple damage hits
 
 func char_lose_hp(collider_name):
 	if can_take_damage:
-		if not animation_player.is_playing(): animation_player.play("mc_hurt")
+		if not animation_player.is_playing(): mc_anim_player.play("mc_hurt")
 		if collider_name.begins_with("enemyPatrolling") || collider_name.begins_with("Projectile") || collider_name.begins_with("enemyBoss"):
 			Global.hp -= 20
 		elif collider_name.begins_with("enemyGuard"):

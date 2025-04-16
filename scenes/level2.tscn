@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://djw0nlqqhve3u"]
+[gd_scene load_steps=34 format=3 uid="uid://djw0nlqqhve3u"]
 
 [ext_resource type="PackedScene" uid="uid://cjr1gc4xrjrv6" path="res://scenes/canvas.tscn" id="1_77g56"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_bj6ep"]
@@ -187,7 +187,14 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fe0ck"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
+_data = {
+"RESET": SubResource("Animation_ybvs6"),
+"fade_in": SubResource("Animation_feyno"),
+"fade_out": SubResource("Animation_1dije")
+}
+
+[sub_resource type="Animation" id="Animation_pgbrh"]
 resource_name = "mc_hurt"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -202,12 +209,25 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
+[sub_resource type="Animation" id="Animation_u0816"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smyph"]
 _data = {
-"RESET": SubResource("Animation_ybvs6"),
-"fade_in": SubResource("Animation_feyno"),
-"fade_out": SubResource("Animation_1dije"),
-"mc_hurt": SubResource("Animation_fe0ck")
+"RESET": SubResource("Animation_u0816"),
+"mc_hurt": SubResource("Animation_pgbrh")
 }
 
 [node name="Level2Base" type="Node2D"]
@@ -451,6 +471,12 @@ texture = ExtResource("1_gh6kq")
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_hyb1j")
+}
+
+[node name="MCAnimPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_smyph")
 }
 
 [connection signal="timeout" from="GameManager/DamageCooldownTimer" to="GameManager" method="_on_damage_cooldown_timer_timeout"]

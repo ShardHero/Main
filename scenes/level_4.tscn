@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://clyhkldgyshrv"]
+[gd_scene load_steps=35 format=3 uid="uid://clyhkldgyshrv"]
 
 [ext_resource type="Script" path="res://scenes/level_4.gd" id="1_3a3b4"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="1_7pe4s"]
@@ -232,7 +232,17 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fe0ck"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
+_data = {
+"RESET": SubResource("Animation_ybvs6"),
+"fade_in": SubResource("Animation_feyno"),
+"fade_out": SubResource("Animation_1dije")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pufp7"]
+size = Vector2(169.75, 62)
+
+[sub_resource type="Animation" id="Animation_pgbrh"]
 resource_name = "mc_hurt"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -247,16 +257,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyb1j"]
-_data = {
-"RESET": SubResource("Animation_ybvs6"),
-"fade_in": SubResource("Animation_feyno"),
-"fade_out": SubResource("Animation_1dije"),
-"mc_hurt": SubResource("Animation_fe0ck")
+[sub_resource type="Animation" id="Animation_u0816"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pufp7"]
-size = Vector2(169.75, 62)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smyph"]
+_data = {
+"RESET": SubResource("Animation_u0816"),
+"mc_hurt": SubResource("Animation_pgbrh")
+}
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_3a3b4")
@@ -439,6 +459,12 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level4Death_Area8"]
 position = Vector2(3566, 164)
 shape = SubResource("RectangleShape2D_pufp7")
+
+[node name="MCAnimPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_smyph")
+}
 
 [connection signal="body_entered" from="Level4Death_Area" to="Level4Death_Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Level4Death_Area3" to="Level4Death_Area3" method="_on_body_entered"]

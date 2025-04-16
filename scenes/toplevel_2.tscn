@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b7r5uxtd4fltb"]
+[gd_scene load_steps=35 format=3 uid="uid://b7r5uxtd4fltb"]
 
 [ext_resource type="Script" path="res://scenes/toplevel_2.gd" id="1_qcyny"]
 [ext_resource type="PackedScene" uid="uid://blkdd04xs6e44" path="res://scenes/game_manager.tscn" id="1_wnpkx"]
@@ -268,6 +268,42 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4j6kr"]
 radius = 17.0294
 
+[sub_resource type="Animation" id="Animation_pgbrh"]
+resource_name = "mc_hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u0816"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smyph"]
+_data = {
+"RESET": SubResource("Animation_u0816"),
+"mc_hurt": SubResource("Animation_pgbrh")
+}
+
 [node name="Toplevel2" type="Node2D"]
 script = ExtResource("1_qcyny")
 
@@ -362,6 +398,12 @@ offset_top = 414.0
 offset_right = 907.0
 offset_bottom = 437.0
 text = "5 coin = 20 health"
+
+[node name="MCAnimPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_smyph")
+}
 
 [connection signal="body_entered" from="LevelDown_1" to="LevelDown_1" method="_on_body_entered"]
 [connection signal="body_entered" from="LevelDown_2" to="LevelDown_2" method="_on_body_entered"]
